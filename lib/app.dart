@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:story_cube_app/ui/pages/home_page.dart';
 
+import 'constants/themes.dart';
+
 class StoryCubeApp extends StatelessWidget {
   const StoryCubeApp({super.key});
 
@@ -8,10 +10,9 @@ class StoryCubeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      themeMode: ThemeMode.system,
+      theme: AppThemes.lightTheme,
+      darkTheme: AppThemes.darkTheme,
       home: const HomePage(),
     );
   }
