@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:story_cube_app/ui/pages/home_page.dart';
+import 'constants/routes.dart' as routes;
 
 import 'constants/themes.dart';
 
@@ -13,7 +13,8 @@ class StoryCubeApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
-      home: const HomePage(),
+      onGenerateRoute: routes.generateRoute,
+      initialRoute: routes.tabSelector,
     );
   }
 }
