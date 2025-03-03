@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:story_cube_app/constants/sizes.dart';
+import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/ui/pages/pages.dart';
+
+import 'constants/icon_sizes.dart';
 
 class TabSelector extends StatelessWidget {
   TabSelector({super.key});
@@ -8,8 +10,8 @@ class TabSelector extends StatelessWidget {
   final ValueNotifier<int> _currentIndex = ValueNotifier<int>(0);
 
   final List<Widget> _pages = [
-    const TimelinePage(),
     const StoriesPage(),
+    const TimelinePage(),
   ];
 
   @override
@@ -45,9 +47,9 @@ class TabSelector extends StatelessWidget {
                 type: BottomNavigationBarType.fixed,
                 currentIndex: index,
                 onTap: (newIndex) => _currentIndex.value = newIndex,
-                iconSize: AppSizes.size_24,
-                selectedFontSize: 12,
-                unselectedFontSize: 12,
+                iconSize: AppIconSizes.medium,
+                unselectedLabelStyle: AppTextStyles.caption,
+                selectedLabelStyle: AppTextStyles.caption,
                 items: [
                   BottomNavigationBarItem(
                     label: 'Stories',

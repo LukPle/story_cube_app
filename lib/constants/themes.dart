@@ -6,7 +6,6 @@ class AppThemes {
   AppThemes._();
 
   static final lightTheme = ThemeData(
-    fontFamily: 'Inter',
     pageTransitionsTheme: pageTransitionsTheme,
     scaffoldBackgroundColor: AppColors.lightBackground,
     cardColor: AppColors.lightCard,
@@ -23,7 +22,6 @@ class AppThemes {
   );
 
   static final darkTheme = ThemeData(
-    fontFamily: 'Inter',
     pageTransitionsTheme: pageTransitionsTheme,
     scaffoldBackgroundColor: AppColors.darkBackground,
     cardColor: AppColors.darkCard,
