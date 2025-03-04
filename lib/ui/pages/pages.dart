@@ -1,3 +1,3 @@
 export 'timeline_page.dart';
-export 'stories_page.dart';
+export 'chronicle_page.dart';
 

@@ -15,7 +15,7 @@ class AppTextStyles {
 
   static const TextStyle h2 = TextStyle(
     fontFamily: fontFamily,
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: FontWeight.w600,
     height: 1.3,
     letterSpacing: -0.25,
@@ -23,7 +23,7 @@ class AppTextStyles {
 
   static const TextStyle h3 = TextStyle(
     fontFamily: fontFamily,
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: FontWeight.w600,
     height: 1.4,
     letterSpacing: -0.2,

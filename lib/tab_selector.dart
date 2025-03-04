@@ -10,8 +10,8 @@ class TabSelector extends StatelessWidget {
   final ValueNotifier<int> _currentIndex = ValueNotifier<int>(0);
 
   final List<Widget> _pages = [
-    const StoriesPage(),
     const TimelinePage(),
+    const ChroniclePage(),
   ];
 
   @override
@@ -52,12 +52,12 @@ class TabSelector extends StatelessWidget {
                 selectedLabelStyle: AppTextStyles.caption,
                 items: [
                   BottomNavigationBarItem(
-                    label: 'Stories',
-                    icon: Icon(_currentIndex.value == 0 ? Icons.menu_book : Icons.menu_book_outlined),
+                    label: 'Timeline',
+                    icon: Icon(_currentIndex.value == 0 ? Icons.date_range : Icons.date_range_outlined),
                   ),
                   BottomNavigationBarItem(
-                    label: 'Timeline',
-                    icon: Icon(_currentIndex.value == 1 ? Icons.view_timeline : Icons.view_timeline_outlined),
+                    label: 'Chronicle',
+                    icon: Icon(_currentIndex.value == 1 ? Icons.account_box : Icons.account_box_outlined),
                   ),
                 ],
               ),
