@@ -3,6 +3,7 @@ import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/models/memory_model.dart';
+import '../../constants/routes.dart' as routes;
 
 import '../../constants/colors.dart';
 
@@ -17,7 +18,7 @@ class MemoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {},
+      onTap: () => Navigator.of(context).pushNamed(routes.memoryDetails, arguments: memory),
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.all(AppSizes.size_16),

@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/ui/widgets/memory_card.dart';
 
+import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
 import '../../constants/text_styles.dart';
 
@@ -15,8 +16,13 @@ class TimelinePage extends StatelessWidget {
       MemoryModel(dateTime: DateTime.now(), title: "Memory 1", subtitle: "Subtitle"),
       MemoryModel(dateTime: DateTime.now().subtract(const Duration(days: 3)), title: "Memory 2", subtitle: "Subtitle"),
       MemoryModel(dateTime: DateTime.now().subtract(const Duration(days: 28)), title: "Memory 3", subtitle: "Subtitle"),
+      MemoryModel(dateTime: DateTime.now().subtract(const Duration(days: 35)), title: "Memory 4", subtitle: "Subtitle"),
       MemoryModel(
-          dateTime: DateTime.now().subtract(const Duration(days: 189)), title: "Memory 3", subtitle: "Subtitle"),
+          dateTime: DateTime.now().subtract(const Duration(days: 189)), title: "Memory 5", subtitle: "Subtitle"),
+      MemoryModel(
+          dateTime: DateTime.now().subtract(const Duration(days: 193)), title: "Memory 6", subtitle: "Subtitle"),
+      MemoryModel(
+          dateTime: DateTime.now().subtract(const Duration(days: 267)), title: "Memory 7", subtitle: "Subtitle"),
     ];
 
     memories.sort((a, b) => b.dateTime.compareTo(a.dateTime));
@@ -51,9 +57,11 @@ class TimelinePage extends StatelessWidget {
                             Container(
                               width: AppSizes.size_32,
                               height: AppSizes.size_32,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.grey,
+                                color: Theme.of(context).brightness == Brightness.light
+                                    ? AppColors.secondaryColorLight
+                                    : AppColors.secondaryColorDark,
                               ),
                             ),
                             const SizedBox(width: AppSizes.size_8),
@@ -77,6 +85,7 @@ class TimelinePage extends StatelessWidget {
                     );
                   }).toList(),
                 ),
+                const SizedBox(height: AppSizes.size_64),
               ],
             ),
           ),
