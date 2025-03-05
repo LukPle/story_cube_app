@@ -4,11 +4,11 @@ import 'package:story_cube_app/models/memory_model.dart';
 final List<MemoryModel> memoryData = [
   MemoryModel(
     dateTime: DateTime.now(),
-    createdAt: DateTime.now().subtract(const Duration(hours: 2)), // Recent entry
+    createdAt: DateTime.now().subtract(const Duration(hours: 2)),
     title: "The Day I Met Your Grandfather",
     subtitle: "A love story",
     summary: "Your grandmother tells this story about the day she met your grandfather at a local fair. She says he was the most handsome man in the crowd!",
-    text: "It was a warm summer afternoon when your grandmother first saw your grandfather...",
+    text: "It was a warm summer afternoon when your grandmother first saw your grandfather. She was at the local fair with her friends, enjoying the rides and the smell of fresh popcorn in the air. As she turned the corner near the carousel, she noticed a young man laughing with his friends. Their eyes met, and for a brief moment, time seemed to stand still. She would later tell you that she just knew in that moment—he was the one. They spent the entire evening talking, sharing stories, and enjoying the fair together. And that was the beginning of a love story that would last a lifetime.",
     locations: ['Local Fair', 'Town Square'],
     tags: ['love', 'first meeting', 'family'],
     persons: [
@@ -21,8 +21,8 @@ final List<MemoryModel> memoryData = [
     createdAt: DateTime.now().subtract(const Duration(days: 2)),
     title: "Our Family Road Trip",
     subtitle: "An unforgettable adventure",
-    summary: "The trip we took down south was filled with laughter, flat tires, and a million memories...",
-    text: "It was a road trip like no other...",
+    summary: "The trip we took down south was filled with laughter, flat tires, and a million memories.",
+    text: "It was a road trip like no other. We packed up the car early in the morning, everyone excited for the adventure ahead. The first few hours were filled with music and laughter, but as we got deeper into our journey, things started to get interesting. A flat tire in the middle of nowhere, a sudden rainstorm that forced us to take shelter in a tiny roadside diner, and a spontaneous detour that led us to the most breathtaking sunset we'd ever seen. Despite the unexpected turns, it was these moments that made the trip unforgettable.",
     locations: ['Southern Route', 'Grand Canyon', 'Desert Campground'],
     tags: ['family', 'adventure', 'road trip'],
     persons: [
@@ -36,8 +36,8 @@ final List<MemoryModel> memoryData = [
     createdAt: DateTime.now().subtract(const Duration(days: 20)),
     title: "The Christmas We Will Never Forget",
     subtitle: "A Christmas miracle",
-    summary: "That year, we had snow in the middle of a warm winter! Your Uncle Charlie had to shovel the walkway...",
-    text: "It was a Christmas miracle...",
+    summary: "That year, we had snow in the middle of a warm winter! Your Uncle Charlie had to shovel the walkway.",
+    text: "It was a Christmas miracle. The weather forecast had predicted another dry, mild winter, but when we woke up that morning, the entire neighborhood was covered in a thick layer of snow. Uncle Charlie, bundled up in three layers, grabbed the shovel and started clearing a path while we all watched from the window, sipping hot cocoa. That evening, we built a snowman, had a snowball fight, and shared one of the most magical Christmas nights ever. It was a holiday we would talk about for years to come.",
     locations: ['Home', 'Living Room'],
     tags: ['Christmas', 'family', 'snow'],
     persons: [
@@ -51,8 +51,8 @@ final List<MemoryModel> memoryData = [
     createdAt: DateTime.now().subtract(const Duration(days: 30)),
     title: "The Summer Picnic Disaster",
     subtitle: "A lesson in preparation",
-    summary: "We decided to go on a picnic, but no one thought to pack the sunscreen!...",
-    text: "It started as a perfect day for a picnic...",
+    summary: "We decided to go on a picnic, but no one thought to pack the sunscreen!",
+    text: "It started as a perfect day for a picnic. The sun was shining, the food was packed, and everyone was in high spirits. But as the afternoon wore on, we realized something—we had forgotten sunscreen. By the time we finished eating, half of us were already sunburnt. Then, to make matters worse, a gust of wind knocked over our picnic blanket, sending sandwiches flying. Despite the minor disasters, we laughed the entire way home. It was a day full of mishaps, but also one of our most memorable summer outings.",
     locations: ['Riverbank', 'Park'],
     tags: ['picnic', 'family', 'adventure'],
     persons: [
@@ -65,8 +65,8 @@ final List<MemoryModel> memoryData = [
     createdAt: DateTime.now().subtract(const Duration(days: 180)),
     title: "The Wedding Day",
     subtitle: "A special day",
-    summary: "Grandma always says she’s never seen anything more beautiful than the day she married Grandpa...",
-    text: "The day Grandma married Grandpa was the most beautiful day...",
+    summary: "Grandma always says she’s never seen anything more beautiful than the day she married Grandpa.",
+    text: "The day Grandma married Grandpa was the most beautiful day of her life. The church was filled with friends and family, and when she walked down the aisle, she felt like the luckiest woman in the world. Grandpa stood at the altar, tears in his eyes, knowing he was about to spend the rest of his life with the love of his life. The reception was filled with laughter, dancing, and stories that would be told for generations. It was a day of love, joy, and the beginning of a lifelong journey together.",
     locations: ['Church', 'Reception Hall'],
     tags: ['wedding', 'love', 'family'],
     persons: [
@@ -79,8 +79,8 @@ final List<MemoryModel> memoryData = [
     createdAt: DateTime.now().subtract(const Duration(days: 190)),
     title: "The Day I Bought My First Car",
     subtitle: "The freedom of the open road",
-    summary: "I saved up for months to buy my first car. It wasn’t much, but it was mine!...",
-    text: "It wasn’t much, but it was mine...",
+    summary: "I saved up for months to buy my first car. It wasn’t much, but it was mine!",
+    text: "It wasn’t much, but it was mine. After months of saving every penny, I finally had enough to buy my first car. It was an old, slightly rusty sedan, but to me, it was freedom. I remember driving it home, windows down, music blasting, feeling on top of the world. That car took me on road trips, late-night drives, and countless adventures. It was more than just a car—it was the beginning of independence.",
     locations: ['Car Dealership', 'Town'],
     tags: ['independence', 'first car', 'adventure'],
     persons: [
@@ -92,8 +92,8 @@ final List<MemoryModel> memoryData = [
     createdAt: DateTime.now().subtract(const Duration(days: 260)),
     title: "Our Family's First House",
     subtitle: "Building memories together",
-    summary: "The first house we bought as a family was so small, but we turned it into a home...",
-    text: "When we bought our first house as a family, it was small, but it was ours...",
+    summary: "The first house we bought as a family was so small, but we turned it into a home.",
+    text: "When we bought our first house as a family, it was small, but it was ours. We spent weekends painting the walls, decorating every corner, and making it feel like home. The living room became the heart of our family—game nights, movie marathons, and long conversations happened there. It may not have been the biggest or the fanciest house, but it was filled with love, and that made it perfect.",
     locations: ['New Home'],
     tags: ['family', 'home', 'first house'],
     persons: [
