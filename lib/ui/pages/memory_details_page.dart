@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -10,6 +9,7 @@ import 'package:story_cube_app/ui/widgets/person_card.dart';
 
 import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
+import '../widgets/in_visual_text.dart';
 import '../widgets/memory_tag.dart';
 
 class MemoryDetailsPage extends StatelessWidget {
@@ -47,7 +47,34 @@ class MemoryDetailsPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(memory.title, style: AppTextStyles.h1),
+                    RichText(
+                      text: TextSpan(
+                        style: AppTextStyles.h1.copyWith(
+                          color: Theme.of(context).textTheme.headlineLarge?.color ?? Colors.black,
+                        ),
+                        children: [
+                          TextSpan(text: memory.title),
+                          if (memory.createdAt.isAfter(DateTime.now().subtract(const Duration(days: 5))))
+                            WidgetSpan(
+                              alignment: PlaceholderAlignment.middle,
+                              baseline: TextBaseline.alphabetic,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: AppSizes.size_12),
+                                child: InVisualText(
+                                  text: 'New',
+                                  size: InVisualTextSize.large,
+                                  backgroundColor: Theme.of(context).brightness == Brightness.light
+                                      ? AppColors.accentColorLight
+                                      : AppColors.accentColorDark,
+                                  textColor: Theme.of(context).brightness == Brightness.light
+                                      ? AppColors.accentColorDark
+                                      : AppColors.accentColorLight,
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
                     const SizedBox(height: AppSizes.size_16),
                     Text(memory.summary, style: AppTextStyles.bodyLarge),
                     const SizedBox(height: AppSizes.size_16),

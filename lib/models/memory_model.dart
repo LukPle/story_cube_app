@@ -9,6 +9,7 @@ class MemoryModel {
   List<String> locations;
   List<String> tags;
   List<PersonModel> persons;
+  DateTime createdAt;
 
   MemoryModel({
     required this.dateTime,
@@ -19,6 +20,7 @@ class MemoryModel {
     required this.locations,
     required this.tags,
     required this.persons,
+    required this.createdAt,
   });
 
   factory MemoryModel.fromMap(Map<String, dynamic> data) {
@@ -33,6 +35,7 @@ class MemoryModel {
       persons: (data['persons'] as List<dynamic>?)?.map((personData) {
         return PersonModel.fromMap(personData);
       }).toList() ?? [],
+      createdAt: DateTime.parse(data['created_at']),
     );
   }
 }

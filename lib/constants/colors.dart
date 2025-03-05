@@ -14,8 +14,10 @@ class AppColors {
   /// Primary and Secondary Color for Widgets and Components
   static const Color primaryColorLight = Color(0xff48525E); // Hex: #48525E
   static const Color secondaryColorLight = Color(0xffF6DFD7); // Hex: #F6DFD7
+  static const Color accentColorLight = Color(0xff89945C); // Hex: #89945C
   static const Color primaryColorDark = Color(0xffEDDCD2); // Hex: #EDDCD2
   static const Color secondaryColorDark = Color(0xffD9AE84); // Hex: #D9AE84
+  static const Color accentColorDark = Color(0xffE2FF71); // Hex: #E2FF71
 
   /// Success and Error Color
   static const Color success = Colors.green;
