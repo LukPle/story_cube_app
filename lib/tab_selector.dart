@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/ui/pages/pages.dart';
 
 import 'constants/icon_sizes.dart';
+import 'constants/sizes.dart';
 
 class TabSelector extends StatelessWidget {
   TabSelector({super.key});
@@ -53,11 +55,19 @@ class TabSelector extends StatelessWidget {
                 items: [
                   BottomNavigationBarItem(
                     label: 'Timeline',
-                    icon: Icon(_currentIndex.value == 0 ? Icons.date_range : Icons.date_range_outlined),
+                    icon: Padding(
+                      padding: const EdgeInsets.only(bottom: AppSizes.size_2),
+                      child: Icon(PhosphorIcons.notebook(
+                          _currentIndex.value == 0 ? PhosphorIconsStyle.fill : PhosphorIconsStyle.regular)),
+                    ),
                   ),
                   BottomNavigationBarItem(
                     label: 'Chronicle',
-                    icon: Icon(_currentIndex.value == 1 ? Icons.account_box : Icons.account_box_outlined),
+                    icon: Padding(
+                      padding: const EdgeInsets.only(bottom: AppSizes.size_2),
+                      child: Icon(PhosphorIcons.userFocus(
+                          _currentIndex.value == 1 ? PhosphorIconsStyle.fill : PhosphorIconsStyle.regular)),
+                    ),
                   ),
                 ],
               ),

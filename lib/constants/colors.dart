@@ -4,7 +4,7 @@ class AppColors {
   AppColors._();
 
   /// Background Colors for the Scaffold Widgets
-  static const Color lightBackground = Color(0xffEDEDED); // Hex: #EDEDED
+  static const Color lightBackground = Color(0xffF6F4F9); // Hex: #F6F4F9
   static const Color darkBackground = Color(0xff141414); // Hex: #141414
 
   /// Background Colors for Tiles and Cards
@@ -12,10 +12,10 @@ class AppColors {
   static const Color darkCard = Color(0xff2F2F2F); // Hex: #2F2F2F
 
   /// Primary and Secondary Color for Widgets and Components
-  static const Color primaryColorLight = Color(0xff2E2E2E); // Hex: #2E2E2E
-  static const Color secondaryColorLight = Color(0xffE2C1B1); // Hex: #E2C1B1
+  static const Color primaryColorLight = Color(0xff48525E); // Hex: #48525E
+  static const Color secondaryColorLight = Color(0xffF6DFD7); // Hex: #F6DFD7
   static const Color primaryColorDark = Color(0xffEDDCD2); // Hex: #EDDCD2
-  static const Color secondaryColorDark = Color(0xff9E7A4C); // Hex: #9E7A4C
+  static const Color secondaryColorDark = Color(0xffD9AE84); // Hex: #D9AE84
 
   /// Success and Error Color
   static const Color success = Colors.green;

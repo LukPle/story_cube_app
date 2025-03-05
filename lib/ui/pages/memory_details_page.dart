@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/models/memory_model.dart';
@@ -51,24 +53,30 @@ class MemoryDetailsPage extends StatelessWidget {
                     const SizedBox(height: AppSizes.size_16),
                     Row(
                       children: [
-                        const Icon(Icons.event),
+                        Icon(PhosphorIcons.calendar()),
                         const SizedBox(width: AppSizes.size_8),
-                        Text(
-                          DateFormat('MMMM yyyy').format(memory.dateTime),
-                          style: AppTextStyles.bodySmall,
+                        Flexible(
+                          child: Text(
+                            DateFormat('MMMM yyyy').format(memory.dateTime),
+                            style: AppTextStyles.bodySmall,
+                            softWrap: true,
+                          ),
                         ),
                       ],
                     ),
                     const SizedBox(height: AppSizes.size_8),
                     Row(
                       children: [
-                        const Icon(Icons.map),
+                        Icon(PhosphorIcons.mapPinSimpleArea()),
                         const SizedBox(width: AppSizes.size_8),
-                        Text(
-                          memory.locations.length > 1
-                              ? '${memory.locations.sublist(0, memory.locations.length - 1).join(', ')} and ${memory.locations.last}'
-                              : memory.locations.first,
-                          style: AppTextStyles.bodySmall,
+                        Flexible(
+                          child: Text(
+                            memory.locations.length > 1
+                                ? '${memory.locations.sublist(0, memory.locations.length - 1).join(', ')} and ${memory.locations.last}'
+                                : memory.locations.first,
+                            style: AppTextStyles.bodySmall,
+                            softWrap: true,
+                          ),
                         ),
                       ],
                     ),
