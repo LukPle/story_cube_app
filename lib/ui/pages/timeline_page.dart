@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:story_cube_app/models/example_data.dart';
 import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/ui/widgets/memory_card.dart';
 
@@ -12,18 +13,7 @@ class TimelinePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<MemoryModel> memories = [
-      MemoryModel(dateTime: DateTime.now(), title: "Memory 1", subtitle: "Subtitle"),
-      MemoryModel(dateTime: DateTime.now().subtract(const Duration(days: 3)), title: "Memory 2", subtitle: "Subtitle"),
-      MemoryModel(dateTime: DateTime.now().subtract(const Duration(days: 28)), title: "Memory 3", subtitle: "Subtitle"),
-      MemoryModel(dateTime: DateTime.now().subtract(const Duration(days: 35)), title: "Memory 4", subtitle: "Subtitle"),
-      MemoryModel(
-          dateTime: DateTime.now().subtract(const Duration(days: 189)), title: "Memory 5", subtitle: "Subtitle"),
-      MemoryModel(
-          dateTime: DateTime.now().subtract(const Duration(days: 193)), title: "Memory 6", subtitle: "Subtitle"),
-      MemoryModel(
-          dateTime: DateTime.now().subtract(const Duration(days: 267)), title: "Memory 7", subtitle: "Subtitle"),
-    ];
+    final List<MemoryModel> memories = memoryData;
 
     memories.sort((a, b) => b.dateTime.compareTo(a.dateTime));
 
