@@ -24,7 +24,7 @@ class AppTextStyles {
   static const TextStyle h3 = TextStyle(
     fontFamily: fontFamily,
     fontSize: 22,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     height: 1.4,
     letterSpacing: -0.2,
   );

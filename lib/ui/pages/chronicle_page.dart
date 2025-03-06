@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:story_cube_app/ui/widgets/profile_section.dart';
 
 import '../../constants/sizes.dart';
 import '../../constants/text_styles.dart';
@@ -18,7 +19,8 @@ class ChroniclePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Chronicle', style: AppTextStyles.h1),
-                const SizedBox(height: AppSizes.size_16),
+                const SizedBox(height: AppSizes.size_32),
+                const ProfileSection(),
               ],
             ),
           ),

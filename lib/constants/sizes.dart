@@ -31,6 +31,9 @@ class AppSizes {
   /// 64px
   static const double size_64 = 64;
 
+  /// 72px
+  static const double size_72 = 72;
+
   /// 96px
   static const double size_96 = 96;
 }

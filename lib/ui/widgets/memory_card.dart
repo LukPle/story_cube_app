@@ -32,7 +32,7 @@ class MemoryCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(memory.title, style: AppTextStyles.body),
+                Text(memory.title, style: AppTextStyles.bodyLarge),
                 if (memory.createdAt.isAfter(DateTime.now().subtract(const Duration(days: 5)))) ...[
                   const SizedBox(width: AppSizes.size_8),
                   InVisualText(

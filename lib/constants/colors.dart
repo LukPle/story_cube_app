@@ -4,7 +4,7 @@ class AppColors {
   AppColors._();
 
   /// Background Colors for the Scaffold Widgets
-  static const Color lightBackground = Color(0xffF6F4F9); // Hex: #F6F4F9
+  static const Color lightBackground = Color(0xffF1F1F1); // Hex: #F1F1F1
   static const Color darkBackground = Color(0xff141414); // Hex: #141414
 
   /// Background Colors for Tiles and Cards

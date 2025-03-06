@@ -20,8 +20,7 @@ class PersonCard extends StatelessWidget {
       decoration: BoxDecoration(
           color: Theme.of(context).brightness == Brightness.light ? AppColors.lightCard : AppColors.darkCard,
           borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
-          border: Border.all(width: 1, color: Colors.grey)
-      ),
+          border: Border.all(width: 1, color: Colors.grey)),
       padding: const EdgeInsets.symmetric(
         horizontal: AppSizes.size_12,
         vertical: AppSizes.size_8,
@@ -31,7 +30,13 @@ class PersonCard extends StatelessWidget {
         children: [
           Text('${person.firstName} ${person.lastName}', style: AppTextStyles.bodySmall),
           const SizedBox(height: AppSizes.size_2),
-          Text(person.relationship, style: AppTextStyles.caption),
+          Text(
+            person.relationship,
+            style: AppTextStyles.caption.copyWith(
+              color: AppTextStyles.caption.color?.withOpacity(0.5) ??
+                  (Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white60),
+            ),
+          ),
         ],
       ),
     );

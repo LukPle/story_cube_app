@@ -33,7 +33,7 @@ class TimelinePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text('Timeline', style: AppTextStyles.h1),
-                const SizedBox(height: AppSizes.size_16),
+                const SizedBox(height: AppSizes.size_32),
                 Column(
                   children: groupedMemories.entries.map((entry) {
                     String monthYear = entry.key;
@@ -55,10 +55,7 @@ class TimelinePage extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(width: AppSizes.size_8),
-                            Text(
-                              monthYear,
-                              style: AppTextStyles.bodyLarge,
-                            ),
+                            Text(monthYear, style: AppTextStyles.h3),
                           ],
                         ),
                         const SizedBox(height: AppSizes.size_8),
