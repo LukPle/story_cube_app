@@ -7,6 +7,9 @@ class AppSizes {
   /// 4px
   static const double size_4 = 4;
 
+  /// 6px
+  static const double size_6 = 6;
+
   /// 8px
   static const double size_8 = 8;
 

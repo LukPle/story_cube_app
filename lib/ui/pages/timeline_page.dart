@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:story_cube_app/models/example_data.dart';
 import 'package:story_cube_app/models/memory_model.dart';
-import 'package:story_cube_app/ui/widgets/memory_card.dart';
 
-import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
 import '../../constants/text_styles.dart';
+import '../widgets/timeline_entry.dart';
 
 class TimelinePage extends StatelessWidget {
   const TimelinePage({super.key});
@@ -35,42 +34,15 @@ class TimelinePage extends StatelessWidget {
                 const Text('Timeline', style: AppTextStyles.h1),
                 const SizedBox(height: AppSizes.size_32),
                 Column(
-                  children: groupedMemories.entries.map((entry) {
-                    String monthYear = entry.key;
-                    List<MemoryModel> monthlyMemories = entry.value;
+                  children: List.generate(groupedMemories.length, (index) {
+                    final entry = groupedMemories.entries.elementAt(index);
 
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              width: AppSizes.size_32,
-                              height: AppSizes.size_32,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Theme.of(context).brightness == Brightness.light
-                                    ? AppColors.secondaryColorLight
-                                    : AppColors.secondaryColorDark,
-                              ),
-                            ),
-                            const SizedBox(width: AppSizes.size_8),
-                            Text(monthYear, style: AppTextStyles.h3),
-                          ],
-                        ),
-                        const SizedBox(height: AppSizes.size_8),
-                        Column(
-                          children: monthlyMemories
-                              .map((memory) => Padding(
-                                    padding: const EdgeInsets.only(bottom: AppSizes.size_8),
-                                    child: MemoryCard(memory: memory),
-                                  ))
-                              .toList(),
-                        ),
-                        const SizedBox(height: AppSizes.size_16),
-                      ],
+                    return TimelineEntry(
+                      monthYear: entry.key,
+                      memories: entry.value,
+                      isLastEntry: index == groupedMemories.length - 1,
                     );
-                  }).toList(),
+                  }),
                 ),
                 const SizedBox(height: AppSizes.size_64),
               ],

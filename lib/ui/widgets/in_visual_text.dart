@@ -26,8 +26,8 @@ class InVisualText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppSizes.size_8,
+      padding: EdgeInsets.symmetric(
+        horizontal: size == InVisualTextSize.medium ? AppSizes.size_6 : AppSizes.size_8,
         vertical: AppSizes.size_2,
       ),
       decoration: BoxDecoration(

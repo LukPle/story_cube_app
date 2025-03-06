@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
@@ -32,7 +33,15 @@ class MemoryCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(memory.title, style: AppTextStyles.bodyLarge),
+                Text(
+                  'Recorded on ${DateFormat('dd.MM.yyyy').format(memory.createdAt)}',
+                  style: AppTextStyles.caption.copyWith(
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? AppColors.accentColorLight
+                        : AppColors.accentColorDark,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
                 if (memory.createdAt.isAfter(DateTime.now().subtract(const Duration(days: 5)))) ...[
                   const SizedBox(width: AppSizes.size_8),
                   InVisualText(
@@ -44,11 +53,17 @@ class MemoryCard extends StatelessWidget {
                         ? AppColors.accentColorDark
                         : AppColors.accentColorLight,
                   ),
-                ]
+                ],
               ],
             ),
+            const SizedBox(height: AppSizes.size_8),
+            Text(
+              memory.title,
+              style: AppTextStyles.body.copyWith(fontWeight: FontWeight.w500),
+              maxLines: 1,
+            ),
             const SizedBox(height: AppSizes.size_4),
-            Text(memory.subtitle, style: AppTextStyles.bodySmall),
+            Text(memory.subtitle, style: AppTextStyles.bodySmall, maxLines: 1),
           ],
         ),
       ),
