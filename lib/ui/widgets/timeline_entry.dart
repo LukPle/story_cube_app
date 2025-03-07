@@ -3,7 +3,7 @@ import 'package:story_cube_app/models/memory_model.dart';
 import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
 import '../../constants/text_styles.dart';
-import 'memory_card.dart';
+import 'memories/memory_card.dart';
 
 class TimelineEntry extends StatelessWidget {
   final String monthYear;

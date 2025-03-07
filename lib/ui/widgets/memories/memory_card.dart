@@ -4,10 +4,10 @@ import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/models/memory_model.dart';
-import 'package:story_cube_app/ui/widgets/in_visual_text.dart';
-import '../../constants/routes.dart' as routes;
+import 'package:story_cube_app/ui/widgets/memories/memory_tag.dart';
+import '../../../constants/routes.dart' as routes;
 
-import '../../constants/colors.dart';
+import '../../../constants/colors.dart';
 
 class MemoryCard extends StatelessWidget {
   const MemoryCard({
@@ -44,7 +44,7 @@ class MemoryCard extends StatelessWidget {
                 ),
                 if (memory.createdAt.isAfter(DateTime.now().subtract(const Duration(days: 5)))) ...[
                   const SizedBox(width: AppSizes.size_8),
-                  InVisualText(
+                  MemoryTag(
                     text: 'New',
                     backgroundColor: Theme.of(context).brightness == Brightness.light
                         ? AppColors.accentColorLight

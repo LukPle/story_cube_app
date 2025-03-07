@@ -3,10 +3,10 @@ import 'package:just_audio/just_audio.dart';
 import 'package:story_cube_app/constants/icon_sizes.dart';
 import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
-import 'package:story_cube_app/ui/widgets/slider_wrapper.dart';
+import 'package:story_cube_app/ui/widgets/memories/slider_wrapper.dart';
 
-import '../../constants/colors.dart';
-import '../../constants/sizes.dart';
+import '../../../constants/colors.dart';
+import '../../../constants/sizes.dart';
 
 class AudioPlayerSection extends StatefulWidget {
   const AudioPlayerSection({

@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/radius_sizes.dart';
-import '../../constants/sizes.dart';
-import '../../constants/text_styles.dart';
+import '../../../constants/radius_sizes.dart';
+import '../../../constants/sizes.dart';
+import '../../../constants/text_styles.dart';
 
-enum InVisualTextSize {
+enum MemoryTagSize {
   medium,
   large,
 }
 
-class InVisualText extends StatelessWidget {
-  const InVisualText({
+class MemoryTag extends StatelessWidget {
+  const MemoryTag({
     super.key,
-    this.size = InVisualTextSize.medium,
+    this.size = MemoryTagSize.medium,
     required this.text,
     required this.backgroundColor,
     this.textColor,
   });
 
-  final InVisualTextSize size;
+  final MemoryTagSize size;
   final String text;
   final Color backgroundColor;
   final Color? textColor;
@@ -27,7 +27,7 @@ class InVisualText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: size == InVisualTextSize.medium ? AppSizes.size_6 : AppSizes.size_8,
+        horizontal: size == MemoryTagSize.medium ? AppSizes.size_6 : AppSizes.size_8,
         vertical: AppSizes.size_2,
       ),
       decoration: BoxDecoration(
@@ -38,7 +38,7 @@ class InVisualText extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: size == InVisualTextSize.medium
+        style: size == MemoryTagSize.medium
             ? AppTextStyles.caption.copyWith(
                 color: textColor == null ? AppTextStyles.caption.color : textColor!,
                 fontWeight: FontWeight.w700,

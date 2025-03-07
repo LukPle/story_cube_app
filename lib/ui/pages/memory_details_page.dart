@@ -6,14 +6,14 @@ import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/ui/widgets/app_scaffold.dart';
-import 'package:story_cube_app/ui/widgets/audio_player_section.dart';
+import 'package:story_cube_app/ui/widgets/memories/audio_player_section.dart';
 import 'package:story_cube_app/ui/widgets/list_fading_shader.dart';
 import 'package:story_cube_app/ui/widgets/person_card.dart';
 
 import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
-import '../widgets/in_visual_text.dart';
-import '../widgets/memory_tag.dart';
+import '../widgets/memories/memory_tag.dart';
+import '../widgets/memories/memory_chip.dart';
 
 class MemoryDetailsPage extends StatelessWidget {
   const MemoryDetailsPage({
@@ -74,9 +74,9 @@ class MemoryDetailsPage extends StatelessWidget {
                                 baseline: TextBaseline.alphabetic,
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: AppSizes.size_12),
-                                  child: InVisualText(
+                                  child: MemoryTag(
                                     text: 'New',
-                                    size: InVisualTextSize.large,
+                                    size: MemoryTagSize.large,
                                     backgroundColor: Theme.of(context).brightness == Brightness.light
                                         ? AppColors.accentColorLight
                                         : AppColors.accentColorDark,
@@ -147,7 +147,7 @@ class MemoryDetailsPage extends StatelessWidget {
                         spacing: AppSizes.size_4,
                         runSpacing: AppSizes.size_4,
                         children: memory.tags.map((tag) {
-                          return MemoryTag(text: tag);
+                          return MemoryChip(text: tag);
                         }).toList(),
                       ),
                       const SizedBox(height: AppSizes.size_16),

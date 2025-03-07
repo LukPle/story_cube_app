@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 
-import '../../constants/colors.dart';
-import '../../constants/sizes.dart';
+import '../../../constants/colors.dart';
+import '../../../constants/sizes.dart';
 
-class MemoryTag extends StatelessWidget {
-  const MemoryTag({
+class MemoryChip extends StatelessWidget {
+  const MemoryChip({
     super.key,
     required this.text,
   });
