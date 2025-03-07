@@ -26,6 +26,8 @@ class AppColors {
 
 
 class ThemedColor {
+  ThemedColor._();
+
   static Color getColor(BuildContext context, {required Color light, required Color dark}) {
     return Theme.of(context).brightness == Brightness.light ? light : dark;
   }

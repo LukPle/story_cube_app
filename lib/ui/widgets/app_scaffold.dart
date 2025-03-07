@@ -16,7 +16,6 @@ class AppScaffold extends StatelessWidget {
     this.hasPadding = true,
     this.extendBodyBehindAppBar = false,
     this.removeLargeTitle = false,
-    this.customLargeTitleWidget,
   });
 
   final String pageTitle;
@@ -27,8 +26,6 @@ class AppScaffold extends StatelessWidget {
   final bool hasPadding;
   final bool extendBodyBehindAppBar;
   final bool removeLargeTitle;
-
-  final Widget? customLargeTitleWidget;
 
   @override
   Widget build(BuildContext context) {

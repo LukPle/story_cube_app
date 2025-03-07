@@ -39,7 +39,7 @@ class FriendsFamilySection extends StatelessWidget {
                 ),
                 child: PersonCard(person: persons[index]),
               ),
-              separatorBuilder: (context, index) => const SizedBox(width: AppSizes.size_8),
+              separatorBuilder: (context, index) => const SizedBox(width: AppSizes.size_4),
             ),
           ),
           const SizedBox(height: AppSizes.size_16),
