@@ -25,7 +25,7 @@ class MemoryCard extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(AppSizes.size_16),
         decoration: BoxDecoration(
-          color: Theme.of(context).brightness == Brightness.light ? AppColors.lightCard : AppColors.darkCard,
+          color: ThemedColor.cardColor(context),
           borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
         ),
         child: Column(
@@ -36,9 +36,7 @@ class MemoryCard extends StatelessWidget {
                 Text(
                   'Recorded on ${DateFormat('dd.MM.yyyy').format(memory.createdAt)}',
                   style: AppTextStyles.caption.copyWith(
-                    color: Theme.of(context).brightness == Brightness.light
-                        ? AppColors.accentColorLight
-                        : AppColors.accentColorDark,
+                    color: ThemedColor.accentColor(context),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -46,9 +44,7 @@ class MemoryCard extends StatelessWidget {
                   const SizedBox(width: AppSizes.size_8),
                   MemoryTag(
                     text: 'New',
-                    backgroundColor: Theme.of(context).brightness == Brightness.light
-                        ? AppColors.accentColorLight
-                        : AppColors.accentColorDark,
+                    backgroundColor: ThemedColor.accentColor(context),
                     textColor: Theme.of(context).brightness == Brightness.light
                         ? AppColors.accentColorDark
                         : AppColors.accentColorLight,

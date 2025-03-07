@@ -23,3 +23,30 @@ class AppColors {
   static const Color success = Colors.green;
   static const Color error = Colors.red;
 }
+
+
+class ThemedColor {
+  static Color getColor(BuildContext context, {required Color light, required Color dark}) {
+    return Theme.of(context).brightness == Brightness.light ? light : dark;
+  }
+
+  static Color primaryColor(BuildContext context) {
+    return getColor(context, light: AppColors.primaryColorLight, dark: AppColors.primaryColorDark);
+  }
+
+  static Color secondaryColor(BuildContext context) {
+    return getColor(context, light: AppColors.secondaryColorLight, dark: AppColors.secondaryColorDark);
+  }
+
+  static Color accentColor(BuildContext context) {
+    return getColor(context, light: AppColors.accentColorLight, dark: AppColors.accentColorDark);
+  }
+
+  static Color backgroundColor(BuildContext context) {
+    return getColor(context, light: AppColors.lightBackground, dark: AppColors.darkBackground);
+  }
+
+  static Color cardColor(BuildContext context) {
+    return getColor(context, light: AppColors.lightCard, dark: AppColors.darkCard);
+  }
+}

@@ -54,10 +54,7 @@ class AppScaffold extends StatelessWidget {
             leading: leading,
             trailing: trailing,
             brightness: Theme.of(context).brightness,
-            backgroundColor: backgroundColor ??
-                (Theme.of(context).brightness == Brightness.light
-                    ? AppColors.lightBackground
-                    : AppColors.darkBackground),
+            backgroundColor: backgroundColor ?? ThemedColor.backgroundColor(context),
             border: const Border(
               bottom: BorderSide(color: Colors.transparent),
             ),

@@ -18,7 +18,7 @@ class PersonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Theme.of(context).brightness == Brightness.light ? AppColors.lightCard : AppColors.darkCard,
+          color: ThemedColor.cardColor(context),
           borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
           border: Border.all(width: 1, color: Colors.grey)),
       padding: const EdgeInsets.symmetric(

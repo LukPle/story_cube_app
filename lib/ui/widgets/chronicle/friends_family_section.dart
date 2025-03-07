@@ -20,7 +20,7 @@ class FriendsFamilySection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: AppSizes.size_16),
       decoration: BoxDecoration(
-        color: Theme.of(context).brightness == Brightness.light ? AppColors.lightCard : AppColors.darkCard,
+        color: ThemedColor.cardColor(context),
         borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
       ),
       child: Column(

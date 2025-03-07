@@ -19,8 +19,7 @@ class TimelineEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color primaryColor =
-        Theme.of(context).brightness == Brightness.light ? AppColors.primaryColorLight : AppColors.primaryColorDark;
+    Color primaryColor = ThemedColor.primaryColor(context);
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,

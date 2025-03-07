@@ -21,7 +21,7 @@ class ChronicleCard extends StatelessWidget {
       height: AppSizes.size_96,
       padding: const EdgeInsets.all(AppSizes.size_16),
       decoration: BoxDecoration(
-        color: Theme.of(context).brightness == Brightness.light ? AppColors.lightCard : AppColors.darkCard,
+        color: ThemedColor.cardColor(context),
         borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
       ),
       child: ChronicleHeader(title: title, entryCount: entryCount),

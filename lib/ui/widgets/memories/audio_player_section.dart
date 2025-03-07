@@ -80,7 +80,7 @@ class AudioPlayerSectionState extends State<AudioPlayerSection> {
               bottom: AppSizes.size_16,
             ),
             decoration: BoxDecoration(
-              color: Theme.of(context).brightness == Brightness.light ? AppColors.lightCard : AppColors.darkCard,
+              color: ThemedColor.cardColor(context),
               borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
             ),
             child: ValueListenableBuilder<Duration>(
@@ -93,9 +93,7 @@ class AudioPlayerSectionState extends State<AudioPlayerSection> {
                       slider: Slider(
                         value: position.inSeconds.toDouble(),
                         max: duration.inSeconds.toDouble(),
-                        inactiveColor: Theme.of(context).brightness == Brightness.light
-                            ? AppColors.lightBackground
-                            : AppColors.darkBackground,
+                        inactiveColor: ThemedColor.backgroundColor(context),
                         onChanged: (value) => _audioPlayer.seek(Duration(seconds: value.toInt())),
                       ),
                     ),
@@ -122,9 +120,7 @@ class AudioPlayerSectionState extends State<AudioPlayerSection> {
               height: AppSizes.size_48,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Theme.of(context).brightness == Brightness.light
-                    ? AppColors.primaryColorLight
-                    : AppColors.primaryColorDark,
+                color: ThemedColor.primaryColor(context),
               ),
               child: Icon(
                 isPlaying ? Icons.pause : Icons.play_arrow,

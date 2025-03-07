@@ -35,9 +35,7 @@ class MemoryDetailsPage extends StatelessWidget {
           color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
         ),
       ),
-      backgroundColor: Theme.of(context).brightness == Brightness.light
-          ? AppColors.secondaryColorLight
-          : AppColors.secondaryColorDark,
+      backgroundColor: ThemedColor.secondaryColor(context),
       hasPadding: false,
       extendBodyBehindAppBar: true,
       removeLargeTitle: true,
@@ -51,9 +49,7 @@ class MemoryDetailsPage extends StatelessWidget {
                   width: double.infinity,
                   padding: const EdgeInsets.all(AppSizes.size_16),
                   decoration: BoxDecoration(
-                      color: Theme.of(context).brightness == Brightness.light
-                          ? AppColors.secondaryColorLight
-                          : AppColors.secondaryColorDark,
+                      color: ThemedColor.secondaryColor(context),
                       borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(AppRadiusSizes.large),
                         bottomRight: Radius.circular(AppRadiusSizes.large),
@@ -77,9 +73,7 @@ class MemoryDetailsPage extends StatelessWidget {
                                   child: MemoryTag(
                                     text: 'New',
                                     size: MemoryTagSize.large,
-                                    backgroundColor: Theme.of(context).brightness == Brightness.light
-                                        ? AppColors.accentColorLight
-                                        : AppColors.accentColorDark,
+                                    backgroundColor: ThemedColor.accentColor(context),
                                     textColor: Theme.of(context).brightness == Brightness.light
                                         ? AppColors.accentColorDark
                                         : AppColors.accentColorLight,
@@ -156,9 +150,7 @@ class MemoryDetailsPage extends StatelessWidget {
                       Text(
                         'Recorded on ${DateFormat('dd.MM.yyyy').format(memory.createdAt)}',
                         style: AppTextStyles.caption.copyWith(
-                          color: Theme.of(context).brightness == Brightness.light
-                              ? AppColors.accentColorLight
-                              : AppColors.accentColorDark,
+                          color: ThemedColor.accentColor(context),
                           fontWeight: FontWeight.w500,
                         ),
                       ),

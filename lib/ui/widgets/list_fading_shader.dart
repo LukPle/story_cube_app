@@ -21,8 +21,7 @@ class ListFadingShader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final defaultColor =
-        Theme.of(context).brightness == Brightness.light ? AppColors.lightBackground : AppColors.darkBackground;
+    final defaultColor = ThemedColor.backgroundColor(context);
     final gradientColor = color ?? defaultColor;
 
     List<Color> colors;

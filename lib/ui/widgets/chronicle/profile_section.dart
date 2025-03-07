@@ -17,7 +17,7 @@ class ProfileSection extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(AppSizes.size_16),
         decoration: BoxDecoration(
-          color: Theme.of(context).brightness == Brightness.light ? AppColors.lightCard : AppColors.darkCard,
+          color: ThemedColor.cardColor(context),
           borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
         ),
         child: Row(
@@ -63,9 +63,7 @@ class ProfileSection extends StatelessWidget {
             Icon(
               PhosphorIcons.pencilSimpleLine(),
               size: AppIconSizes.small,
-              color: Theme.of(context).brightness == Brightness.light
-                  ? AppColors.primaryColorLight
-                  : AppColors.primaryColorDark,
+              color: ThemedColor.primaryColor(context),
             )
           ],
         ),

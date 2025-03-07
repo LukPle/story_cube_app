@@ -41,9 +41,7 @@ class ChronicleHeader extends StatelessWidget {
         Icon(
           PhosphorIcons.caretCircleRight(),
           size: AppIconSizes.small,
-          color: Theme.of(context).brightness == Brightness.light
-              ? AppColors.primaryColorLight
-              : AppColors.primaryColorDark,
+          color: ThemedColor.primaryColor(context),
         ),
       ],
     );
