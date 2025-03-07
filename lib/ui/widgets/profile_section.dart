@@ -25,8 +25,8 @@ class ProfileSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: AppSizes.size_72,
-              width: AppSizes.size_72,
+              height: AppSizes.size_64,
+              width: AppSizes.size_64,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
@@ -46,11 +46,14 @@ class ProfileSection extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Monika", style: AppTextStyles.h3),
+                  Text(
+                    "Monika",
+                    style: AppTextStyles.bodyLarge.copyWith(fontWeight: FontWeight.w500),
+                  ),
                   const SizedBox(height: AppSizes.size_2),
                   Text(
                     "Großmutter • 74 Jahre alt",
-                    style: AppTextStyles.body.copyWith(
+                    style: AppTextStyles.bodySmall.copyWith(
                       color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
                     ),
                   ),
@@ -58,8 +61,8 @@ class ProfileSection extends StatelessWidget {
               ),
             ),
             Icon(
-              PhosphorIcons.caretCircleRight(),
-              size: AppIconSizes.medium,
+              PhosphorIcons.pencilSimpleLine(),
+              size: AppIconSizes.small,
               color: Theme.of(context).brightness == Brightness.light
                   ? AppColors.primaryColorLight
                   : AppColors.primaryColorDark,
