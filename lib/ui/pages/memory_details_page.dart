@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:story_cube_app/constants/icon_sizes.dart';
 import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/models/memory_model.dart';
+import 'package:story_cube_app/ui/widgets/app_scaffold.dart';
 import 'package:story_cube_app/ui/widgets/audio_player_section.dart';
 import 'package:story_cube_app/ui/widgets/list_fading_shader.dart';
 import 'package:story_cube_app/ui/widgets/person_card.dart';
@@ -23,15 +25,24 @@ class MemoryDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).brightness == Brightness.light
-            ? AppColors.secondaryColorLight
-            : AppColors.secondaryColorDark,
+    return AppScaffold(
+      pageTitle: memory.title,
+      leading: GestureDetector(
+        onTap: () => Navigator.of(context).pop(),
+        child: Icon(
+          PhosphorIcons.caretLeft(),
+          size: AppIconSizes.medium,
+          color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
+        ),
       ),
-      body: SafeArea(
-        child: ListFadingShader(
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? AppColors.secondaryColorLight
+          : AppColors.secondaryColorDark,
+      hasPadding: false,
+      extendBodyBehindAppBar: true,
+      removeLargeTitle: true,
+      children: [
+        ListFadingShader(
           direction: FadingDirection.bottom,
           child: SingleChildScrollView(
             child: Column(
@@ -141,6 +152,16 @@ class MemoryDetailsPage extends StatelessWidget {
                       ),
                       const SizedBox(height: AppSizes.size_16),
                       Text(memory.text, style: AppTextStyles.body),
+                      const SizedBox(height: AppSizes.size_8),
+                      Text(
+                        'Recorded on ${DateFormat('dd.MM.yyyy').format(memory.createdAt)}',
+                        style: AppTextStyles.caption.copyWith(
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.accentColorLight
+                              : AppColors.accentColorDark,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                       const SizedBox(height: AppSizes.size_64),
                     ],
                   ),
@@ -149,7 +170,7 @@ class MemoryDetailsPage extends StatelessWidget {
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

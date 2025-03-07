@@ -2,30 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:story_cube_app/ui/widgets/profile_section.dart';
 
 import '../../constants/sizes.dart';
-import '../../constants/text_styles.dart';
+import '../widgets/app_scaffold.dart';
 
 class ChroniclePage extends StatelessWidget {
   const ChroniclePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppSizes.size_16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Chronicle', style: AppTextStyles.h1),
-                const SizedBox(height: AppSizes.size_32),
-                const ProfileSection(),
-              ],
-            ),
-          ),
-        ),
-      ),
+    return AppScaffold(
+      pageTitle: 'Chronicle',
+      children: [
+        const SizedBox(height: AppSizes.size_16),
+        const ProfileSection(),
+        const SizedBox(height: AppSizes.size_64),
+      ],
     );
   }
 }

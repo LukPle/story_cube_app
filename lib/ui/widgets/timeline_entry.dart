@@ -38,7 +38,7 @@ class TimelineEntry extends StatelessWidget {
             if (!isLastEntry)
               Container(
                 width: 6,
-                height: AppSizes.size_8 + (memories.length * 117.5) + AppSizes.size_16,
+                height: AppSizes.size_8 + (memories.length * 116) + AppSizes.size_16,
                 color: primaryColor,
               ),
           ],

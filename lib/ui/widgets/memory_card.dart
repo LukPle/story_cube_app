@@ -56,7 +56,7 @@ class MemoryCard extends StatelessWidget {
                 ],
               ],
             ),
-            const SizedBox(height: AppSizes.size_8),
+            const SizedBox(height: AppSizes.size_6),
             Text(
               memory.title,
               style: AppTextStyles.body.copyWith(fontWeight: FontWeight.w500),
