@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:story_cube_app/ui/widgets/chronicle/profile_picture.dart';
+import 'package:story_cube_app/ui/widgets/dashed_container.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/icon_sizes.dart';
@@ -16,12 +17,12 @@ class ProfileSectionPlaceholder extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.of(context).pushNamed(routes.editProfile),
-      child: Container(
+      child: DashedBorderContainer(
+        dashSpace: AppSizes.size_8,
+        dashWidth: AppSizes.size_8,
         padding: const EdgeInsets.all(AppSizes.size_16),
-        decoration: BoxDecoration(
-          color: ThemedColor.cardColor(context),
-          borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
-        ),
+        borderRadius: AppRadiusSizes.medium,
+        borderColor: Colors.grey.withOpacity(0.7),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,14 +34,16 @@ class ProfileSectionPlaceholder extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Add a Chronicle Profile',
-                    style: AppTextStyles.bodyLarge.copyWith(fontWeight: FontWeight.w500),
+                    'Add a Profile',
+                    style: AppTextStyles.bodyLarge.copyWith(
+                        color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
+                        fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: AppSizes.size_2),
                   Text(
-                    'Customize the page here',
+                    'Personalize the chronicle',
                     style: AppTextStyles.bodySmall.copyWith(
-                      color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
+                      color: ThemedColor.getColor(context, light: Colors.black54, dark: Colors.white70),
                     ),
                   ),
                 ],
@@ -48,9 +51,10 @@ class ProfileSectionPlaceholder extends StatelessWidget {
             ),
             Icon(
               PhosphorIcons.plus(),
-              size: AppIconSizes.small,
+              size: AppIconSizes.medium,
               color: ThemedColor.primaryColor(context),
             ),
+            const SizedBox(width: AppSizes.size_2),
           ],
         ),
       ),

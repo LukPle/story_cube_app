@@ -22,8 +22,7 @@ class ProfileSection extends StatelessWidget {
     final today = DateTime.now();
     int age = today.year - birthDate.year;
 
-    if (today.month < birthDate.month ||
-        (today.month == birthDate.month && today.day < birthDate.day)) {
+    if (today.month < birthDate.month || (today.month == birthDate.month && today.day < birthDate.day)) {
       age--;
     }
 
@@ -56,9 +55,9 @@ class ProfileSection extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSizes.size_2),
                   Text(
-                    '${chronicleProfile.relationship} • ${_calculateAge(chronicleProfile.birthday!).toString()}',
+                    '${chronicleProfile.relationship} • ${_calculateAge(chronicleProfile.birthday!).toString()} years old',
                     style: AppTextStyles.bodySmall.copyWith(
-                      color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
+                      color: ThemedColor.getColor(context, light: Colors.black54, dark: Colors.white70),
                     ),
                   ),
                 ],
@@ -69,6 +68,7 @@ class ProfileSection extends StatelessWidget {
               size: AppIconSizes.small,
               color: ThemedColor.primaryColor(context),
             ),
+            const SizedBox(width: AppSizes.size_2),
           ],
         ),
       ),
