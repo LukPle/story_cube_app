@@ -8,6 +8,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/data/local_storage.dart';
+import 'package:story_cube_app/models/chronicle_profile_model.dart';
 import 'package:story_cube_app/ui/widgets/app_scaffold.dart';
 import 'package:story_cube_app/ui/widgets/chronicle/profile_picture.dart';
 
@@ -47,12 +48,15 @@ class EditProfilePageState extends State<EditProfilePage> {
 
   void _saveProfile() {
     final localStorage = LocalStorage.instance;
-    if (_imageNotifier.value != null) {
-      localStorage.saveProfileImage(_imageNotifier.value!);
-    }
-    localStorage.saveName(_nameController.value.text);
-    localStorage.saveRelationship(_relationshipController.value.text);
-    localStorage.saveBirthday(_selectedDateNotifier.value!);
+    localStorage.saveChronicleProfile(
+      ChronicleProfileModel(
+        profileImage: _imageNotifier.value,
+        name: _nameController.value.text,
+        relationship: _relationshipController.value.text,
+        birthday: _selectedDateNotifier.value,
+      ),
+    );
+    Navigator.of(context).pop();
   }
 
   Future<void> _pickImage() async {

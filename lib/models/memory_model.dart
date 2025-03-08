@@ -1,15 +1,15 @@
 import 'package:story_cube_app/models/person_model.dart';
 
 class MemoryModel {
-  DateTime dateTime;
-  String title;
-  String subtitle;
-  String summary;
-  String text;
-  List<String> locations;
-  List<String> tags;
-  List<PersonModel> persons;
-  DateTime createdAt;
+  final DateTime dateTime;
+  final String title;
+  final String subtitle;
+  final String summary;
+  final String text;
+  final List<String> locations;
+  final List<String> tags;
+  final List<PersonModel> persons;
+  final DateTime createdAt;
 
   MemoryModel({
     required this.dateTime,

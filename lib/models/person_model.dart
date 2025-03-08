@@ -1,7 +1,7 @@
 class PersonModel {
-  String firstName;
-  String lastName;
-  String relationship;
+  final String firstName;
+  final String lastName;
+  final String relationship;
 
   PersonModel({
     required this.firstName,

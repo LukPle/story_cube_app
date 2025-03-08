@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:shared_preferences/shared_preferences.dart';
+import '../models/chronicle_profile_model.dart';
 
 class LocalStorage {
   LocalStorage._();
@@ -12,73 +13,53 @@ class LocalStorage {
   static const String _relationshipKey = 'profile_relationship';
   static const String _birthdayKey = 'profile_birthday';
 
-  Future<void> saveProfileImage(File imageFile) async {
+  Future<void> saveChronicleProfile(ChronicleProfileModel profile) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<int> imageBytes = await imageFile.readAsBytes();
-    String base64String = base64Encode(imageBytes);
-    await prefs.setString(_imageKey, base64String);
+
+    if (profile.profileImage != null) {
+      List<int> imageBytes = await profile.profileImage!.readAsBytes();
+      String base64String = base64Encode(imageBytes);
+      await prefs.setString(_imageKey, base64String);
+    }
+
+    await prefs.setString(_nameKey, profile.name ?? '');
+    await prefs.setString(_relationshipKey, profile.relationship ?? '');
+    await prefs.setString(_birthdayKey, profile.birthday?.toIso8601String() ?? '');
   }
 
-  Future<File?> loadProfileImage() async {
+  Future<ChronicleProfileModel> loadChronicleProfile() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? base64String = prefs.getString(_imageKey);
-    if (base64String == null) return null;
 
-    List<int> imageBytes = base64Decode(base64String);
-    File tempFile = File('${Directory.systemTemp.path}/profile_image.png');
-    await tempFile.writeAsBytes(imageBytes);
-    return tempFile;
+    String? base64Image = prefs.getString(_imageKey);
+    String? name = prefs.getString(_nameKey);
+    String? relationship = prefs.getString(_relationshipKey);
+    String? birthdayString = prefs.getString(_birthdayKey);
+
+    File? profileImage;
+    if (base64Image != null && base64Image.isNotEmpty) {
+      List<int> imageBytes = base64Decode(base64Image);
+      profileImage = File('${Directory.systemTemp.path}/profile_image.png');
+      await profileImage.writeAsBytes(imageBytes);
+    }
+
+    DateTime? birthday;
+    if (birthdayString != null && birthdayString.isNotEmpty) {
+      birthday = DateTime.tryParse(birthdayString);
+    }
+
+    return ChronicleProfileModel(
+      profileImage: profileImage,
+      name: name,
+      relationship: relationship,
+      birthday: birthday,
+    );
   }
 
-  Future<void> deleteProfileImage() async {
+  Future<void> deleteChronicleProfile() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.remove(_imageKey);
-  }
-
-  Future<void> saveName(String name) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_nameKey, name);
-  }
-
-  Future<String?> loadName() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString(_nameKey);
-  }
-
-  Future<void> deleteName() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.remove(_nameKey);
-  }
-
-  Future<void> saveRelationship(String relationship) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_relationshipKey, relationship);
-  }
-
-  Future<String?> loadRelationship() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString(_relationshipKey);
-  }
-
-  Future<void> deleteRelationship() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.remove(_relationshipKey);
-  }
-
-  Future<void> saveBirthday(DateTime birthday) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_birthdayKey, birthday.toIso8601String());
-  }
-
-  Future<DateTime?> loadBirthday() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? birthdayString = prefs.getString(_birthdayKey);
-    if (birthdayString == null) return null;
-    return DateTime.parse(birthdayString);
-  }
-
-  Future<void> deleteBirthday() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.remove(_birthdayKey);
   }
 }

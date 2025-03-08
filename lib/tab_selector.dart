@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/ui/pages/pages.dart';
 
+import 'bloc/bloc.dart';
 import 'constants/icon_sizes.dart';
 import 'constants/sizes.dart';
 
@@ -18,62 +20,69 @@ class TabSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ValueListenableBuilder<int>(
-        valueListenable: _currentIndex,
-        builder: (context, index, child) {
-          return IndexedStack(
-            index: index,
-            children: _pages,
-          );
-        },
-      ),
-      bottomNavigationBar: ValueListenableBuilder<int>(
-        valueListenable: _currentIndex,
-        builder: (context, index, child) {
-          return Theme(
-            data: Theme.of(context).copyWith(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-            ),
-            child: Container(
-              decoration: const BoxDecoration(
-                border: Border(
-                  top: BorderSide(
-                    color: Colors.grey,
-                    width: 0.5,
+    return BlocListener<StoryCubeCubit, StoryCubeState>(
+      listener: (context, state) {
+        if (state is StoryCubeLoadFailure) {
+          const Center(child: Text('Loading Failure', style: AppTextStyles.h2));
+        }
+      },
+      child: Scaffold(
+        body: ValueListenableBuilder<int>(
+          valueListenable: _currentIndex,
+          builder: (context, index, child) {
+            return IndexedStack(
+              index: index,
+              children: _pages,
+            );
+          },
+        ),
+        bottomNavigationBar: ValueListenableBuilder<int>(
+          valueListenable: _currentIndex,
+          builder: (context, index, child) {
+            return Theme(
+              data: Theme.of(context).copyWith(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+              ),
+              child: Container(
+                decoration: const BoxDecoration(
+                  border: Border(
+                    top: BorderSide(
+                      color: Colors.grey,
+                      width: 0.5,
+                    ),
                   ),
                 ),
-              ),
-              child: BottomNavigationBar(
-                type: BottomNavigationBarType.fixed,
-                currentIndex: index,
-                onTap: (newIndex) => _currentIndex.value = newIndex,
-                iconSize: AppIconSizes.medium,
-                unselectedLabelStyle: AppTextStyles.caption,
-                selectedLabelStyle: AppTextStyles.caption,
-                items: [
-                  BottomNavigationBarItem(
-                    label: 'Timeline',
-                    icon: Padding(
-                      padding: const EdgeInsets.only(bottom: AppSizes.size_2),
-                      child: Icon(PhosphorIcons.notebook(
-                          _currentIndex.value == 0 ? PhosphorIconsStyle.fill : PhosphorIconsStyle.regular)),
+                child: BottomNavigationBar(
+                  type: BottomNavigationBarType.fixed,
+                  currentIndex: index,
+                  onTap: (newIndex) => _currentIndex.value = newIndex,
+                  iconSize: AppIconSizes.medium,
+                  unselectedLabelStyle: AppTextStyles.caption,
+                  selectedLabelStyle: AppTextStyles.caption,
+                  items: [
+                    BottomNavigationBarItem(
+                      label: 'Timeline',
+                      icon: Padding(
+                        padding: const EdgeInsets.only(bottom: AppSizes.size_2),
+                        child: Icon(PhosphorIcons.notebook(
+                            _currentIndex.value == 0 ? PhosphorIconsStyle.fill : PhosphorIconsStyle.regular)),
+                      ),
                     ),
-                  ),
-                  BottomNavigationBarItem(
-                    label: 'Chronicle',
-                    icon: Padding(
-                      padding: const EdgeInsets.only(bottom: AppSizes.size_2),
-                      child: Icon(PhosphorIcons.userFocus(
-                          _currentIndex.value == 1 ? PhosphorIconsStyle.fill : PhosphorIconsStyle.regular)),
+                    BottomNavigationBarItem(
+                      label: 'Chronicle',
+                      icon: Padding(
+                        padding: const EdgeInsets.only(bottom: AppSizes.size_2),
+                        child: Icon(PhosphorIcons.userFocus(
+                            _currentIndex.value == 1 ? PhosphorIconsStyle.fill : PhosphorIconsStyle.regular)),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
