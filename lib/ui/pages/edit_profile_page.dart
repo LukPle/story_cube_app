@@ -80,6 +80,48 @@ class EditProfilePageState extends State<EditProfilePage> {
     Navigator.of(context).pop();
   }
 
+  Future<void> _onProfilePictureTap() async {
+    if (_imageNotifier.value == null) {
+      await _pickImage();
+    } else {
+      _showImageOptions();
+    }
+  }
+
+  void _showImageOptions() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(AppSizes.size_16),
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                ListTile(
+                  leading: Icon(PhosphorIcons.imageSquare(), size: AppIconSizes.medium),
+                  title: const Text('Change Picture', style: AppTextStyles.body),
+                  onTap: () async {
+                    Navigator.pop(context);
+                    await _pickImage();
+                  },
+                ),
+                ListTile(
+                  leading: Icon(PhosphorIcons.trash(), size: AppIconSizes.medium, color: AppColors.error),
+                  title: Text('Delete Picture', style: AppTextStyles.body.copyWith(color: AppColors.error)),
+                  onTap: () {
+                    _imageNotifier.value = null;
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   Future<void> _pickImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? pickedFile = await picker.pickImage(source: ImageSource.gallery);
@@ -175,7 +217,7 @@ class EditProfilePageState extends State<EditProfilePage> {
             children: [
               const SizedBox(height: AppSizes.size_32),
               GestureDetector(
-                onTap: _pickImage,
+                onTap: () => _onProfilePictureTap(),
                 child: Center(
                   child: Stack(
                     clipBehavior: Clip.none,
