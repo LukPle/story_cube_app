@@ -32,7 +32,7 @@ class ProfileSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.of(context).pushNamed(routes.editProfile),
+      onTap: () => Navigator.of(context).pushNamed(routes.editProfile, arguments: chronicleProfile),
       child: Container(
         padding: const EdgeInsets.all(AppSizes.size_16),
         decoration: BoxDecoration(

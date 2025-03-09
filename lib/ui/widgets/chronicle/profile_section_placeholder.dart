@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:story_cube_app/models/chronicle_profile_model.dart';
 import 'package:story_cube_app/ui/widgets/chronicle/profile_picture.dart';
 import 'package:story_cube_app/ui/widgets/dashed_container.dart';
 
@@ -16,7 +17,7 @@ class ProfileSectionPlaceholder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.of(context).pushNamed(routes.editProfile),
+      onTap: () => Navigator.of(context).pushNamed(routes.editProfile, arguments: ChronicleProfileModel()),
       child: DashedBorderContainer(
         dashSpace: AppSizes.size_8,
         dashWidth: AppSizes.size_8,

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -12,18 +13,25 @@ import 'package:story_cube_app/models/chronicle_profile_model.dart';
 import 'package:story_cube_app/ui/widgets/app_scaffold.dart';
 import 'package:story_cube_app/ui/widgets/chronicle/profile_picture.dart';
 
+import '../../bloc/story_cube_cubit.dart';
 import '../../constants/colors.dart';
 import '../../constants/icon_sizes.dart';
 import '../../constants/sizes.dart';
 
 class EditProfilePage extends StatefulWidget {
-  const EditProfilePage({super.key});
+  const EditProfilePage({
+    super.key,
+    required this.chronicleProfile,
+  });
+
+  final ChronicleProfileModel chronicleProfile;
 
   @override
   EditProfilePageState createState() => EditProfilePageState();
 }
 
 class EditProfilePageState extends State<EditProfilePage> {
+  late final ChronicleProfileModel chronicleProfile;
   final ValueNotifier<File?> _imageNotifier = ValueNotifier<File?>(null);
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _relationshipController = TextEditingController();
@@ -33,29 +41,42 @@ class EditProfilePageState extends State<EditProfilePage> {
   @override
   void initState() {
     super.initState();
+    chronicleProfile = widget.chronicleProfile;
+
+    _imageNotifier.value = chronicleProfile.profileImage;
+    _nameController.text = chronicleProfile.name ?? '';
+    _relationshipController.text = chronicleProfile.relationship ?? '';
+    _selectedDateNotifier.value = chronicleProfile.birthday;
+
+    _imageNotifier.addListener(_updateButtonState);
     _nameController.addListener(_updateButtonState);
     _relationshipController.addListener(_updateButtonState);
     _selectedDateNotifier.addListener(_updateButtonState);
   }
 
   void _updateButtonState() {
-    bool isButtonEnabled = _nameController.text.isNotEmpty &&
-        _relationshipController.text.isNotEmpty &&
-        _selectedDateNotifier.value != null;
+    bool isButtonEnabled = _imageNotifier.value != chronicleProfile.profileImage ||
+        _nameController.text.isNotEmpty &&
+            _relationshipController.text.isNotEmpty &&
+            _selectedDateNotifier.value != null;
 
     _isSaveButtonEnabled.value = isButtonEnabled;
   }
 
   void _saveProfile() {
     final localStorage = LocalStorage.instance;
-    localStorage.saveChronicleProfile(
-      ChronicleProfileModel(
-        profileImage: _imageNotifier.value,
-        name: _nameController.value.text,
-        relationship: _relationshipController.value.text,
-        birthday: _selectedDateNotifier.value,
-      ),
+    final storyAppCubit = context.read<StoryCubeCubit>();
+
+    final chronicleProfile = ChronicleProfileModel(
+      profileImage: _imageNotifier.value,
+      name: _nameController.value.text,
+      relationship: _relationshipController.value.text,
+      birthday: _selectedDateNotifier.value,
     );
+
+    localStorage.saveChronicleProfile(chronicleProfile);
+    storyAppCubit.updateChronicleProfile(chronicleProfile);
+
     Navigator.of(context).pop();
   }
 

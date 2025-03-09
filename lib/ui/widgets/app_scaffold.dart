@@ -38,14 +38,14 @@ class AppScaffold extends StatelessWidget {
                 ? Text(
                     pageTitle,
                     style: AppTextStyles.h1.copyWith(
-                      color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
+                      color: ThemedColor.getColor(context, light: Colors.black, dark: Colors.white),
                     ),
                   )
                 : const SizedBox.shrink(),
             middle: Text(
               pageTitle,
               style: AppTextStyles.bodyLarge.copyWith(
-                color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
+                color: ThemedColor.getColor(context, light: Colors.black, dark: Colors.white),
               ),
             ),
             leading: leading,

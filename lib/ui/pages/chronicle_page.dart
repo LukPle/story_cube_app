@@ -21,43 +21,46 @@ class ChroniclePage extends StatelessWidget {
       PersonModel(firstName: 'Peppa', lastName: 'Wutz', relationship: 'Schwester'),
     ];
 
-    final state = context
-        .read<StoryCubeCubit>()
-        .state;
+    return BlocBuilder<StoryCubeCubit, StoryCubeState>(
+      bloc: BlocProvider.of<StoryCubeCubit>(context),
+      builder: (context, state) {
+        if (state is StoryCubeLoadSuccess) {
+          final chronicleProfile = state.chronicleProfile;
 
-    if (state is StoryCubeLoadSuccess) {
-      final chronicleProfile = state.chronicleProfile;
-
-      return AppScaffold(
-        pageTitle: 'Chronicle',
-        children: [
-          const SizedBox(height: AppSizes.size_16),
-          (chronicleProfile.name != null && chronicleProfile.relationship != null && chronicleProfile.birthday != null)
-              ? ProfileSection(chronicleProfile: chronicleProfile)
-              : const ProfileSectionPlaceholder(),
-          const SizedBox(height: AppSizes.size_16),
-          FriendsFamilySection(persons: persons),
-          const SizedBox(height: AppSizes.size_16),
-          const Row(
+          return AppScaffold(
+            pageTitle: 'Chronicle',
             children: [
-              Expanded(child: ChronicleCard(title: 'Growing Up', entryCount: 7)),
-              SizedBox(width: AppSizes.size_16),
-              Expanded(child: ChronicleCard(title: 'Past Jobs', entryCount: 2)),
+              const SizedBox(height: AppSizes.size_16),
+              (chronicleProfile.name != null &&
+                      chronicleProfile.relationship != null &&
+                      chronicleProfile.birthday != null)
+                  ? ProfileSection(chronicleProfile: chronicleProfile)
+                  : const ProfileSectionPlaceholder(),
+              const SizedBox(height: AppSizes.size_16),
+              FriendsFamilySection(persons: persons),
+              const SizedBox(height: AppSizes.size_16),
+              const Row(
+                children: [
+                  Expanded(child: ChronicleCard(title: 'Growing Up', entryCount: 7)),
+                  SizedBox(width: AppSizes.size_16),
+                  Expanded(child: ChronicleCard(title: 'Past Jobs', entryCount: 2)),
+                ],
+              ),
+              const SizedBox(height: AppSizes.size_16),
+              const Row(
+                children: [
+                  Expanded(child: ChronicleCard(title: 'Adventures', entryCount: 16)),
+                  SizedBox(width: AppSizes.size_16),
+                  Expanded(child: ChronicleCard(title: 'Food', entryCount: 8)),
+                ],
+              ),
+              const SizedBox(height: AppSizes.size_64),
             ],
-          ),
-          const SizedBox(height: AppSizes.size_16),
-          const Row(
-            children: [
-              Expanded(child: ChronicleCard(title: 'Adventures', entryCount: 16)),
-              SizedBox(width: AppSizes.size_16),
-              Expanded(child: ChronicleCard(title: 'Food', entryCount: 8)),
-            ],
-          ),
-          const SizedBox(height: AppSizes.size_64),
-        ],
-      );
-    }
+          );
+        }
 
-    return const Center(child: CircularProgressIndicator());
+        return const Center(child: CircularProgressIndicator());
+      },
+    );
   }
 }
