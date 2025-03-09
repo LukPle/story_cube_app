@@ -99,7 +99,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               shrinkWrap: true,
               children: [
                 ListTile(
-                  leading: Icon(PhosphorIcons.imageSquare(), size: AppIconSizes.medium),
+                  leading: Icon(PhosphorIcons.imagesSquare(), size: AppIconSizes.medium),
                   title: const Text('Change Picture', style: AppTextStyles.body),
                   onTap: () async {
                     Navigator.pop(context);
