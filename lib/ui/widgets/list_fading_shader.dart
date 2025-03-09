@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
 
 enum FadingDirection {
+  none,
   top,
   bottom,
   both,
@@ -21,6 +22,10 @@ class ListFadingShader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (direction == FadingDirection.none) {
+      return child;
+    }
+
     final defaultColor = ThemedColor.backgroundColor(context);
     final gradientColor = color ?? defaultColor;
 

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
 import '../../constants/text_styles.dart';
+import 'list_fading_shader.dart';
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold({
@@ -14,6 +15,7 @@ class AppScaffold extends StatelessWidget {
     this.trailing,
     this.backgroundColor,
     this.hasPadding = true,
+    this.fadingDirection = FadingDirection.none,
     this.extendBodyBehindAppBar = false,
     this.removeLargeTitle = false,
   });
@@ -24,6 +26,7 @@ class AppScaffold extends StatelessWidget {
   final Widget? trailing;
   final Color? backgroundColor;
   final bool hasPadding;
+  final FadingDirection fadingDirection;
   final bool extendBodyBehindAppBar;
   final bool removeLargeTitle;
 
@@ -31,7 +34,9 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: extendBodyBehindAppBar,
-      body: CustomScrollView(
+      body: ListFadingShader(
+        direction: fadingDirection,
+        child: CustomScrollView(
         slivers: [
           CupertinoSliverNavigationBar(
             largeTitle: !removeLargeTitle
@@ -66,7 +71,7 @@ class AppScaffold extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      ),),
     );
   }
 }
