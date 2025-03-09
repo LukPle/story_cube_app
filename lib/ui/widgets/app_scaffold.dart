@@ -37,41 +37,42 @@ class AppScaffold extends StatelessWidget {
       body: ListFadingShader(
         direction: fadingDirection,
         child: CustomScrollView(
-        slivers: [
-          CupertinoSliverNavigationBar(
-            largeTitle: !removeLargeTitle
-                ? Text(
-                    pageTitle,
-                    style: AppTextStyles.h1.copyWith(
-                      color: ThemedColor.getColor(context, light: Colors.black, dark: Colors.white),
-                    ),
-                  )
-                : const SizedBox.shrink(),
-            middle: Text(
-              pageTitle,
-              style: AppTextStyles.bodyLarge.copyWith(
-                color: ThemedColor.getColor(context, light: Colors.black, dark: Colors.white),
+          slivers: [
+            CupertinoSliverNavigationBar(
+              largeTitle: !removeLargeTitle
+                  ? Text(
+                      pageTitle,
+                      style: AppTextStyles.h1.copyWith(
+                        color: ThemedColor.getColor(context, light: Colors.black, dark: Colors.white),
+                      ),
+                    )
+                  : const SizedBox.shrink(),
+              middle: Text(
+                pageTitle,
+                style: AppTextStyles.bodyLarge.copyWith(
+                  color: ThemedColor.getColor(context, light: Colors.black, dark: Colors.white),
+                ),
+              ),
+              leading: leading,
+              trailing: trailing,
+              brightness: Theme.of(context).brightness,
+              backgroundColor: backgroundColor ?? ThemedColor.backgroundColor(context),
+              border: const Border(
+                bottom: BorderSide(color: Colors.transparent),
+              ),
+              alwaysShowMiddle: false,
+              transitionBetweenRoutes: false,
+              stretch: true,
+            ),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: hasPadding ? AppSizes.size_16 : 0),
+              sliver: SliverList(
+                delegate: SliverChildListDelegate(children),
               ),
             ),
-            leading: leading,
-            trailing: trailing,
-            brightness: Theme.of(context).brightness,
-            backgroundColor: backgroundColor ?? ThemedColor.backgroundColor(context),
-            border: const Border(
-              bottom: BorderSide(color: Colors.transparent),
-            ),
-            alwaysShowMiddle: false,
-            transitionBetweenRoutes: false,
-            stretch: true,
-          ),
-          SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: hasPadding ? AppSizes.size_16 : 0),
-            sliver: SliverList(
-              delegate: SliverChildListDelegate(children),
-            ),
-          ),
-        ],
-      ),),
+          ],
+        ),
+      ),
     );
   }
 }

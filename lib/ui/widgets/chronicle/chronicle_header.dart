@@ -10,11 +10,11 @@ class ChronicleHeader extends StatelessWidget {
   const ChronicleHeader({
     super.key,
     required this.title,
-    required this.entryCount,
+    required this.memoriesCount,
   });
 
   final String title;
-  final int entryCount;
+  final int memoriesCount;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class ChronicleHeader extends StatelessWidget {
               style: AppTextStyles.body.copyWith(fontWeight: FontWeight.w500),
             ),
             Text(
-              '$entryCount Entries',
+              '$memoriesCount Memories',
               style: AppTextStyles.bodySmall.copyWith(
                 color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
               ),

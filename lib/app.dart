@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'constants/routes.dart' as routes;
-
 import 'constants/themes.dart';
+import 'constants/routes.dart' as routes;
 
 class StoryCubeApp extends StatelessWidget {
   const StoryCubeApp({super.key});

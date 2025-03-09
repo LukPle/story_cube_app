@@ -253,7 +253,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               ),
               const SizedBox(height: AppSizes.size_32),
               Text(
-                "Name",
+                'Name',
                 style: AppTextStyles.bodySmall.copyWith(
                   color: ThemedColor.primaryColor(context),
                   fontWeight: FontWeight.w500,
@@ -279,7 +279,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               ),
               const SizedBox(height: AppSizes.size_16),
               Text(
-                "Relationship",
+                'Relationship',
                 style: AppTextStyles.bodySmall.copyWith(
                   color: ThemedColor.primaryColor(context),
                   fontWeight: FontWeight.w500,
@@ -305,7 +305,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               ),
               const SizedBox(height: AppSizes.size_16),
               Text(
-                "Birthday",
+                'Birthday',
                 style: AppTextStyles.bodySmall.copyWith(
                   color: ThemedColor.primaryColor(context),
                   fontWeight: FontWeight.w500,

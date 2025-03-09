@@ -5,9 +5,9 @@ import 'package:story_cube_app/constants/sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/ui/widgets/memories/memory_tag.dart';
-import '../../../constants/routes.dart' as routes;
 
 import '../../../constants/colors.dart';
+import '../../../constants/routes.dart' as routes;
 
 class MemoryCard extends StatelessWidget {
   const MemoryCard({

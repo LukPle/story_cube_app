@@ -45,6 +45,7 @@ class AudioPlayerSectionState extends State<AudioPlayerSection> {
   @override
   void dispose() {
     _audioPlayer.dispose();
+    _isPlaying.dispose();
     _audioPlayerPosition.dispose();
     _audioPlayerDuration.dispose();
     super.dispose();

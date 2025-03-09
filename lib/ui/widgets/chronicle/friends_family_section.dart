@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'chronicle_header.dart';
+import '../person_card.dart';
 import '../../../constants/colors.dart';
 import '../../../constants/radius_sizes.dart';
 import '../../../constants/sizes.dart';
 import '../../../models/person_model.dart';
-import '../person_card.dart';
-import 'chronicle_header.dart';
+import '../../../constants/routes.dart' as routes;
 
 class FriendsFamilySection extends StatelessWidget {
   const FriendsFamilySection({
@@ -17,37 +18,40 @@ class FriendsFamilySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: AppSizes.size_16),
-      decoration: BoxDecoration(
-        color: ThemedColor.cardColor(context),
-        borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: AppSizes.size_64,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemCount: persons.length,
-              itemBuilder: (context, index) => Padding(
-                padding: EdgeInsets.only(
-                  left: index == 0 ? AppSizes.size_16 : 0,
-                  right: index == persons.length - 1 ? AppSizes.size_16 : 0,
+    return GestureDetector(
+      onTap: () => Navigator.of(context).pushNamed(routes.chronicleDetails, arguments: 'Friends and Family'),
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: AppSizes.size_16),
+        decoration: BoxDecoration(
+          color: ThemedColor.cardColor(context),
+          borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: AppSizes.size_64,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: persons.length,
+                itemBuilder: (context, index) => Padding(
+                  padding: EdgeInsets.only(
+                    left: index == 0 ? AppSizes.size_16 : 0,
+                    right: index == persons.length - 1 ? AppSizes.size_16 : 0,
+                  ),
+                  child: PersonCard(person: persons[index]),
                 ),
-                child: PersonCard(person: persons[index]),
+                separatorBuilder: (context, index) => const SizedBox(width: AppSizes.size_4),
               ),
-              separatorBuilder: (context, index) => const SizedBox(width: AppSizes.size_4),
             ),
-          ),
-          const SizedBox(height: AppSizes.size_16),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppSizes.size_16),
-            child: ChronicleHeader(title: 'Friends and Family', entryCount: persons.length),
-          ),
-        ],
+            const SizedBox(height: AppSizes.size_16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: AppSizes.size_16),
+              child: ChronicleHeader(title: 'Friends and Family', memoriesCount: persons.length),
+            ),
+          ],
+        ),
       ),
     );
   }
