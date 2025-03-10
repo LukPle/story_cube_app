@@ -1,4 +1,5 @@
-import 'package:story_cube_app/models/person_model.dart';
+import 'person_model.dart';
+import 'event_model.dart';
 
 class MemoryModel {
   final DateTime dateTime;
@@ -6,9 +7,12 @@ class MemoryModel {
   final String subtitle;
   final String summary;
   final String text;
-  final List<String> locations;
   final List<String> tags;
+  final List<String> locations;
   final List<PersonModel> persons;
+  final String tone;
+  final List<String> quotes;
+  final List<EventModel> events;
   final DateTime createdAt;
 
   MemoryModel({
@@ -17,9 +21,12 @@ class MemoryModel {
     required this.subtitle,
     required this.summary,
     required this.text,
-    required this.locations,
     required this.tags,
+    required this.locations,
     required this.persons,
+    required this.tone,
+    required this.quotes,
+    required this.events,
     required this.createdAt,
   });
 
@@ -30,10 +37,15 @@ class MemoryModel {
       subtitle: data['subtitle'] as String,
       summary: data['summary'] as String,
       text: data['text'] as String,
-      locations: List<String>.from(data['locations'] ?? []),
       tags: List<String>.from(data['tags'] ?? []),
+      locations: List<String>.from(data['locations'] ?? []),
       persons: (data['persons'] as List<dynamic>?)?.map((personData) {
         return PersonModel.fromMap(personData);
+      }).toList() ?? [],
+      tone: data['tone'] as String,
+      quotes: List<String>.from(data['quotes'] ?? []),
+      events: (data['events'] as List<dynamic>?)?.map((eventData) {
+        return EventModel.fromMap(eventData);
       }).toList() ?? [],
       createdAt: DateTime.parse(data['created_at']),
     );

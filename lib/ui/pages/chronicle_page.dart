@@ -16,9 +16,9 @@ class ChroniclePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<PersonModel> persons = [
-      PersonModel(firstName: 'Klaus', lastName: 'Eberhardt', relationship: 'Big Boss'),
       PersonModel(firstName: 'Amiin', lastName: 'Najjar', relationship: 'Jugendliebe'),
-      PersonModel(firstName: 'Peppa', lastName: 'Wutz', relationship: 'Schwester'),
+      PersonModel(firstName: 'Franz', lastName: '', relationship: 'Ehemann'),
+      PersonModel(firstName: 'Klaus', lastName: 'Eberhardt', relationship: 'Big Boss'),
     ];
 
     return BlocBuilder<StoryCubeCubit, StoryCubeState>(
