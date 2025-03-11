@@ -31,10 +31,10 @@ Route<dynamic> generateRoute(RouteSettings destination) {
         builder: (context) => EditProfilePage(chronicleProfile: chronicleProfile),
       );
     case chronicleDetails:
-      final category = destination.arguments as String;
+      final chronicleDetailsData = destination.arguments as ChronicleDetailsData;
       return MaterialPageRoute(
         settings: destination,
-        builder: (context) => ChronicleDetailsPage(category: category),
+        builder: (context) => ChronicleDetailsPage(chronicleDetailsData: chronicleDetailsData),
       );
     default:
       throw ('Route ${destination.name} does not exist');

@@ -22,6 +22,11 @@ class ChroniclePage extends StatelessWidget {
       PersonModel(firstName: 'Klaus', lastName: 'Eberhardt', relationship: 'Big Boss'),
     ];
 
+    final List<String> growingUpTags = ['childhood', 'school'];
+    final List<String> pastJobTags = ['work', 'university', 'career'];
+    final List<String> adventuresTags = ['vacation', 'travel', 'adventure', 'exploration'];
+    final List<String> foodTags = ['recipe', 'food'];
+
     return BlocBuilder<StoryCubeCubit, StoryCubeState>(
       bloc: BlocProvider.of<StoryCubeCubit>(context),
       builder: (context, state) {
@@ -43,19 +48,42 @@ class ChroniclePage extends StatelessWidget {
               const SizedBox(height: AppSizes.size_16),
               FriendsFamilySection(persons: persons),
               const SizedBox(height: AppSizes.size_16),
-              const Row(
+              Row(
                 children: [
-                  Expanded(child: ChronicleCard(title: 'Growing Up', entryCount: 7)),
-                  SizedBox(width: AppSizes.size_16),
-                  Expanded(child: ChronicleCard(title: 'Past Jobs', entryCount: 2)),
+                  Expanded(
+                    child: ChronicleCard(
+                      title: 'Growing Up',
+                      memories:
+                          memories.where((memory) => memory.tags.any((tag) => growingUpTags.contains(tag))).toList(),
+                    ),
+                  ),
+                  const SizedBox(width: AppSizes.size_16),
+                  Expanded(
+                    child: ChronicleCard(
+                      title: 'Past Jobs',
+                      memories:
+                          memories.where((memory) => memory.tags.any((tag) => pastJobTags.contains(tag))).toList(),
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: AppSizes.size_16),
-              const Row(
+              Row(
                 children: [
-                  Expanded(child: ChronicleCard(title: 'Adventures', entryCount: 16)),
-                  SizedBox(width: AppSizes.size_16),
-                  Expanded(child: ChronicleCard(title: 'Food', entryCount: 8)),
+                  Expanded(
+                    child: ChronicleCard(
+                      title: 'Adventures',
+                      memories:
+                          memories.where((memory) => memory.tags.any((tag) => adventuresTags.contains(tag))).toList(),
+                    ),
+                  ),
+                  const SizedBox(width: AppSizes.size_16),
+                  Expanded(
+                    child: ChronicleCard(
+                      title: 'Food',
+                      memories: memories.where((memory) => memory.tags.any((tag) => foodTags.contains(tag))).toList(),
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: AppSizes.size_64),

@@ -1,4 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:story_cube_app/models/example_data.dart';
+import 'package:story_cube_app/models/memory_model.dart';
 
 import 'story_cube_state.dart';
 import '../data/local_storage.dart';
@@ -15,7 +17,8 @@ class StoryCubeCubit extends Cubit<StoryCubeState> {
 
     try {
       final chronicleProfile = await _localStorage.loadChronicleProfile();
-      final memories = await fetchMemories();
+      //final memories = await fetchMemories();
+      final List<MemoryModel> memories = memoryData;
       emit(StoryCubeLoadSuccess(chronicleProfile: chronicleProfile, memories: memories));
     } catch (e) {
       print(e);
