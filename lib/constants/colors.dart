@@ -16,7 +16,7 @@ class AppColors {
   static const Color secondaryColorLight = Color(0xffF6DFD7); // Hex: #F6DFD7
   static const Color accentColorLight = Color(0xff7A8843); // Hex: #7A8843
   static const Color primaryColorDark = Color(0xffEDDCD2); // Hex: #EDDCD2
-  static const Color secondaryColorDark = Color(0xffD9AE84); // Hex: #D9AE84
+  static const Color secondaryColorDark = Color(0xff9D6C3D); // Hex: #9D6C3D
   static const Color accentColorDark = Color(0xffE2FF71); // Hex: #E2FF71
 
   /// Success and Error Color
