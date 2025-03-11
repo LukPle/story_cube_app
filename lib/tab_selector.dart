@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:story_cube_app/constants/colors.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/ui/pages/pages.dart';
 
@@ -52,6 +53,7 @@ class TabSelector extends StatelessWidget {
                 iconSize: AppIconSizes.medium,
                 unselectedLabelStyle: AppTextStyles.caption,
                 selectedLabelStyle: AppTextStyles.caption,
+                selectedItemColor: ThemedColor.primaryColor(context),
                 items: [
                   BottomNavigationBarItem(
                     label: 'Timeline',

@@ -144,7 +144,6 @@ class EditProfilePageState extends State<EditProfilePage> {
             bottom: AppSizes.size_64,
           ),
           decoration: const BoxDecoration(
-            color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(AppRadiusSizes.medium),
               topRight: Radius.circular(AppRadiusSizes.medium),
