@@ -20,7 +20,7 @@ class PersonCard extends StatelessWidget {
       decoration: BoxDecoration(
           color: ThemedColor.cardColor(context),
           borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
-          border: Border.all(width: 1, color: Colors.grey)),
+          border: Border.all(width: 0.5, color: Colors.grey)),
       padding: const EdgeInsets.symmetric(
         horizontal: AppSizes.size_12,
         vertical: AppSizes.size_8,

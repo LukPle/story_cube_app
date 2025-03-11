@@ -59,7 +59,7 @@ class ChronicleDetailsPage extends StatelessWidget {
                               .toList(),
                         )
                       : const EmptyStatePlaceholder(message: 'Memories that fit this category will appear here'),
-              const SizedBox(height: AppSizes.size_64),
+              const SizedBox(height: AppSizes.size_96),
             ],
           ),
         ),

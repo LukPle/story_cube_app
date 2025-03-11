@@ -134,16 +134,6 @@ class MemoryDetailsPage extends StatelessWidget {
                     const SizedBox(height: AppSizes.size_32),
                     AudioPlayerSection(audioUrl: memory.audioUrl),
                     const SizedBox(height: AppSizes.size_32),
-                    const Text('Themes', style: AppTextStyles.body),
-                    const SizedBox(height: AppSizes.size_8),
-                    Wrap(
-                      spacing: AppSizes.size_4,
-                      runSpacing: AppSizes.size_4,
-                      children: memory.tags.map((tag) {
-                        return MemoryChip(text: tag);
-                      }).toList(),
-                    ),
-                    const SizedBox(height: AppSizes.size_16),
                     Text(memory.text, style: AppTextStyles.body),
                     const SizedBox(height: AppSizes.size_8),
                     Text(
@@ -153,7 +143,60 @@ class MemoryDetailsPage extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    const SizedBox(height: AppSizes.size_64),
+                    const SizedBox(height: AppSizes.size_32),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('Special Quotes', style: AppTextStyles.body),
+                              const SizedBox(height: AppSizes.size_8),
+                              Container(
+                                padding: const EdgeInsets.all(AppSizes.size_12),
+                                decoration: BoxDecoration(
+                                  color: ThemedColor.cardColor(context),
+                                  borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
+                                  border: Border.all(width: 0.5, color: Colors.grey),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: memory.quotes
+                                      .map(
+                                        (quote) => Padding(
+                                          padding: const EdgeInsets.only(bottom: AppSizes.size_6),
+                                          child: Text('"$quote"', style: AppTextStyles.bodySmall),
+                                        ),
+                                      )
+                                      .toList(),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: AppSizes.size_16),
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('Themes', style: AppTextStyles.body),
+                              const SizedBox(height: AppSizes.size_8),
+                              Wrap(
+                                spacing: AppSizes.size_4,
+                                runSpacing: AppSizes.size_4,
+                                children: memory.tags.map((tag) {
+                                  return MemoryChip(text: tag);
+                                }).toList(),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: AppSizes.size_96),
                   ],
                 ),
               ),

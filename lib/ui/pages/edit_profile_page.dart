@@ -382,7 +382,7 @@ class EditProfilePageState extends State<EditProfilePage> {
                   },
                 ),
               ),
-              const SizedBox(height: AppSizes.size_32),
+              const SizedBox(height: AppSizes.size_96),
             ],
           ),
         ),
