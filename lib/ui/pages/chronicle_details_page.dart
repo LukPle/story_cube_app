@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:story_cube_app/constants/colors.dart';
 import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/models/person_model.dart';
 import 'package:story_cube_app/ui/widgets/app_scaffold.dart';
-import 'package:story_cube_app/ui/widgets/memories/memory_card_placeholder.dart';
+import 'package:story_cube_app/ui/widgets/empty_state_placeholder.dart';
 import 'package:story_cube_app/ui/widgets/person_card.dart';
 
 import '../../constants/icon_sizes.dart';
@@ -27,7 +28,7 @@ class ChronicleDetailsPage extends StatelessWidget {
         child: Icon(
           PhosphorIcons.caretLeft(),
           size: AppIconSizes.medium,
-          color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
+          color: ThemedColor.getColor(context, light: Colors.black, dark: Colors.white),
         ),
       ),
       children: [
@@ -37,14 +38,16 @@ class ChronicleDetailsPage extends StatelessWidget {
             children: [
               const SizedBox(height: AppSizes.size_16),
               chronicleDetailsData.category == ChronicleDetailsCategory.persons
-                  ? Wrap(
-                      spacing: AppSizes.size_8,
-                      runSpacing: AppSizes.size_8,
-                      children: chronicleDetailsData.data
-                          .cast<PersonModel>()
-                          .map((person) => PersonCard(person: person))
-                          .toList(),
-                    )
+                  ? chronicleDetailsData.data.cast<PersonModel>().isNotEmpty
+                      ? Wrap(
+                          spacing: AppSizes.size_8,
+                          runSpacing: AppSizes.size_8,
+                          children: chronicleDetailsData.data
+                              .cast<PersonModel>()
+                              .map((person) => PersonCard(person: person))
+                              .toList(),
+                        )
+                      : const EmptyStatePlaceholder(message: 'Persons featured in memories will appear here')
                   : chronicleDetailsData.data.cast<MemoryModel>().isNotEmpty
                       ? Column(
                           children: chronicleDetailsData.data
@@ -55,7 +58,7 @@ class ChronicleDetailsPage extends StatelessWidget {
                                   ))
                               .toList(),
                         )
-                      : const MemoryCardPlaceholder(),
+                      : const EmptyStatePlaceholder(message: 'Memories that fit this category will appear here'),
               const SizedBox(height: AppSizes.size_64),
             ],
           ),

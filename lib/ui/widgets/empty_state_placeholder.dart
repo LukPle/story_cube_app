@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:story_cube_app/constants/colors.dart';
 import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/sizes.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/ui/widgets/dashed_container.dart';
 
-class MemoryCardPlaceholder extends StatelessWidget {
-  const MemoryCardPlaceholder({super.key});
+class EmptyStatePlaceholder extends StatelessWidget {
+  const EmptyStatePlaceholder({
+    super.key,
+    required this.message,
+  });
+
+  final String message;
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +23,9 @@ class MemoryCardPlaceholder extends StatelessWidget {
       borderRadius: AppRadiusSizes.medium,
       borderColor: Colors.grey.withOpacity(0.7),
       child: Text(
-        'Memories that fit this category will appear here',
+        message,
         style: AppTextStyles.body.copyWith(fontWeight: FontWeight.w500).copyWith(
-              color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
+              color: ThemedColor.getColor(context, light: Colors.black54, dark: Colors.white70),
             ),
         textAlign: TextAlign.center,
       ),
