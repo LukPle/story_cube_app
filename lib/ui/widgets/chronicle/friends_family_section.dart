@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:story_cube_app/ui/pages/chronicle_details_page.dart';
 
 import 'chronicle_header.dart';
 import '../person_card.dart';
@@ -19,7 +20,14 @@ class FriendsFamilySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.of(context).pushNamed(routes.chronicleDetails, arguments: 'Friends and Family'),
+      onTap: () => Navigator.of(context).pushNamed(
+        routes.chronicleDetails,
+        arguments: ChronicleDetailsData(
+          category: ChronicleDetailsCategory.persons,
+          title: 'Friends and Family',
+          data: persons,
+        ),
+      ),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: AppSizes.size_16),
         decoration: BoxDecoration(

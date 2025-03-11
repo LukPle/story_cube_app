@@ -23,7 +23,11 @@ class ChronicleCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.of(context).pushNamed(
         routes.chronicleDetails,
-        arguments: ChronicleDetailsData(title: title, memories: memories),
+        arguments: ChronicleDetailsData(
+          category: ChronicleDetailsCategory.memories,
+          title: title,
+          data: memories,
+        ),
       ),
       child: Container(
         height: AppSizes.size_96,

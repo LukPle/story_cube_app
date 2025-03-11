@@ -14,15 +14,17 @@ import '../widgets/chronicle/friends_family_section.dart';
 class ChroniclePage extends StatelessWidget {
   const ChroniclePage({super.key});
 
+  List<PersonModel> _getUniquePersons(List<MemoryModel> memories) {
+    final Set<String> seenPersonIds = {};
+    return memories.expand((memory) => memory.persons).where((person) {
+      final personId = '${person.firstName}-${person.lastName}-${person.relationship}';
+      return seenPersonIds.add(personId);
+    }).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<PersonModel> persons = [
-      PersonModel(firstName: 'Amiin', lastName: 'Najjar', relationship: 'Jugendliebe'),
-      PersonModel(firstName: 'Franz', lastName: '', relationship: 'Ehemann'),
-      PersonModel(firstName: 'Klaus', lastName: 'Eberhardt', relationship: 'Big Boss'),
-    ];
-
-    final List<String> growingUpTags = ['childhood', 'school'];
+    final List<String> growingUpTags = ['childhood', 'school', 'growing up'];
     final List<String> pastJobTags = ['work', 'university', 'career'];
     final List<String> adventuresTags = ['vacation', 'travel', 'adventure', 'exploration'];
     final List<String> foodTags = ['recipe', 'food'];
@@ -46,7 +48,7 @@ class ChroniclePage extends StatelessWidget {
                   ? ProfileSection(chronicleProfile: chronicleProfile)
                   : const ProfileSectionPlaceholder(),
               const SizedBox(height: AppSizes.size_16),
-              FriendsFamilySection(persons: persons),
+              FriendsFamilySection(persons: _getUniquePersons(memories)),
               const SizedBox(height: AppSizes.size_16),
               Row(
                 children: [
