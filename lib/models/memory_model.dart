@@ -7,6 +7,7 @@ class MemoryModel {
   final String subtitle;
   final String summary;
   final String text;
+  final String audioUrl;
   final List<String> tags;
   final List<String> locations;
   final List<PersonModel> persons;
@@ -21,6 +22,7 @@ class MemoryModel {
     required this.subtitle,
     required this.summary,
     required this.text,
+    required this.audioUrl,
     required this.tags,
     required this.locations,
     required this.persons,
@@ -30,13 +32,14 @@ class MemoryModel {
     required this.createdAt,
   });
 
-  factory MemoryModel.fromMap(Map<String, dynamic> data) {
+  factory MemoryModel.fromMap(Map<String, dynamic> data, {required String audioUrl}) {
     return MemoryModel(
       dateTime: DateTime.parse(data['date']),
       title: data['title'] as String,
       subtitle: data['subtitle'] as String,
       summary: data['summary'] as String,
       text: data['text'] as String,
+      audioUrl: audioUrl,
       tags: List<String>.from(data['tags'] ?? []),
       locations: List<String>.from(data['locations'] ?? []),
       persons: (data['persons'] as List<dynamic>?)?.map((personData) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/models/person_model.dart';
 import 'package:story_cube_app/ui/widgets/chronicle/profile_section.dart';
 import 'package:story_cube_app/ui/widgets/chronicle/profile_section_placeholder.dart';
@@ -26,6 +27,9 @@ class ChroniclePage extends StatelessWidget {
       builder: (context, state) {
         if (state is StoryCubeLoadSuccess) {
           final chronicleProfile = state.chronicleProfile;
+          final List<MemoryModel> memories = state.memories;
+
+          print(memories);
 
           return AppScaffold(
             pageTitle: 'Chronicle',

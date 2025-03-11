@@ -1,8 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:story_cube_app/data/local_storage.dart';
 
-import '../models/chronicle_profile_model.dart';
 import 'story_cube_state.dart';
+import '../data/local_storage.dart';
+import '../data/firebase_storage.dart';
+import '../models/chronicle_profile_model.dart';
 
 class StoryCubeCubit extends Cubit<StoryCubeState> {
   StoryCubeCubit() : super(const StoryCubeInitial());
@@ -14,14 +15,19 @@ class StoryCubeCubit extends Cubit<StoryCubeState> {
 
     try {
       final chronicleProfile = await _localStorage.loadChronicleProfile();
-      emit(StoryCubeLoadSuccess(chronicleProfile: chronicleProfile));
+      final memories = await fetchMemories();
+      emit(StoryCubeLoadSuccess(chronicleProfile: chronicleProfile, memories: memories));
     } catch (e) {
+      print(e);
       emit(const StoryCubeLoadFailure());
     }
   }
 
   Future<void> updateChronicleProfile(ChronicleProfileModel chronicleProfile) async {
-    await LocalStorage.instance.saveChronicleProfile(chronicleProfile);
-    emit(StoryCubeLoadSuccess(chronicleProfile: chronicleProfile));
+    if (state is StoryCubeLoadSuccess) {
+      final successState = state as StoryCubeLoadSuccess;
+      await LocalStorage.instance.saveChronicleProfile(chronicleProfile);
+      emit(StoryCubeLoadSuccess(chronicleProfile: chronicleProfile, memories: successState.memories));
+    }
   }
 }

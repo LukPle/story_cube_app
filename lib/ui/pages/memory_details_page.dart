@@ -132,7 +132,7 @@ class MemoryDetailsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: AppSizes.size_32),
-                    const AudioPlayerSection(audioUrl: 'lib/assets/sound_example.mp3'),
+                    AudioPlayerSection(audioUrl: memory.audioUrl),
                     const SizedBox(height: AppSizes.size_32),
                     const Text('Themes', style: AppTextStyles.body),
                     const SizedBox(height: AppSizes.size_8),

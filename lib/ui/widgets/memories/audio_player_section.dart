@@ -29,16 +29,17 @@ class AudioPlayerSectionState extends State<AudioPlayerSection> {
   @override
   void initState() {
     super.initState();
-    _audioPlayer.setAsset(widget.audioUrl);
-    _audioPlayer.positionStream.listen((position) => _audioPlayerPosition.value = position);
-    _audioPlayer.durationStream.listen((duration) => _audioPlayerDuration.value = duration!);
-    _audioPlayer.playerStateStream.listen((state) {
-      if (state.processingState == ProcessingState.completed) {
-        _audioPlayerPosition.value = Duration.zero;
-        _audioPlayer.pause();
-        _audioPlayer.seek(_audioPlayerPosition.value);
-        _isPlaying.value = false;
-      }
+    _audioPlayer.setUrl(widget.audioUrl).then((_) {
+      _audioPlayer.positionStream.listen((position) => _audioPlayerPosition.value = position);
+      _audioPlayer.durationStream.listen((duration) => _audioPlayerDuration.value = duration!);
+      _audioPlayer.playerStateStream.listen((state) {
+        if (state.processingState == ProcessingState.completed) {
+          _audioPlayerPosition.value = Duration.zero;
+          _audioPlayer.pause();
+          _audioPlayer.seek(_audioPlayerPosition.value);
+          _isPlaying.value = false;
+        }
+      });
     });
   }
 

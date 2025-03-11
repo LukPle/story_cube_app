@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:story_cube_app/models/chronicle_profile_model.dart';
 
+import '../models/memory_model.dart';
+
 abstract class StoryCubeState extends Equatable {
   const StoryCubeState();
 
@@ -19,13 +21,16 @@ class StoryCubeLoadInProgress extends StoryCubeState {
 class StoryCubeLoadSuccess extends StoryCubeState {
   const StoryCubeLoadSuccess({
     required this.chronicleProfile,
+    required this.memories,
   });
 
   final ChronicleProfileModel chronicleProfile;
+  final List<MemoryModel> memories;
 
   @override
   List<Object> get props => [
         chronicleProfile,
+        memories,
       ];
 }
 

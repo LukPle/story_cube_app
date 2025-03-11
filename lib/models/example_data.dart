@@ -23,6 +23,7 @@ final List<MemoryModel> memoryData = [
     events: [
       EventModel(date: DateTime.now(), description: "Local Fair"),
     ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
     dateTime: DateTime.now().subtract(const Duration(days: 3)),
@@ -44,6 +45,7 @@ final List<MemoryModel> memoryData = [
     events: [
       EventModel(date: DateTime.now().subtract(const Duration(days: 3)), description: "Flat tire on the road"),
     ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
     dateTime: DateTime.now().subtract(const Duration(days: 28)),
@@ -65,6 +67,7 @@ final List<MemoryModel> memoryData = [
     events: [
       EventModel(date: DateTime.now().subtract(const Duration(days: 28)), description: "Unexpected snowfall"),
     ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
     dateTime: DateTime.now().subtract(const Duration(days: 35)),
@@ -85,6 +88,7 @@ final List<MemoryModel> memoryData = [
     events: [
       EventModel(date: DateTime.now().subtract(const Duration(days: 35)), description: "Sunburn at the picnic"),
     ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
     dateTime: DateTime.now().subtract(const Duration(days: 193)),
@@ -104,5 +108,6 @@ final List<MemoryModel> memoryData = [
     events: [
       EventModel(date: DateTime.now().subtract(const Duration(days: 193)), description: "Bought first car"),
     ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
 ];
