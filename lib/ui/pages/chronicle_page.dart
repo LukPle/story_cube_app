@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:story_cube_app/constants/strings.dart';
 import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/models/person_model.dart';
 import 'package:story_cube_app/ui/widgets/chronicle/profile_section.dart';
@@ -39,7 +40,7 @@ class ChroniclePage extends StatelessWidget {
           print(memories);
 
           return AppScaffold(
-            pageTitle: 'Chronicle',
+            pageTitle: AppStrings.chroniclePageTitle,
             children: [
               const SizedBox(height: AppSizes.size_16),
               (chronicleProfile.name != null &&
@@ -54,7 +55,7 @@ class ChroniclePage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ChronicleCard(
-                      title: 'Growing Up',
+                      title: AppStrings.growingUpCategory,
                       memories:
                           memories.where((memory) => memory.tags.any((tag) => growingUpTags.contains(tag))).toList(),
                     ),
@@ -62,7 +63,7 @@ class ChroniclePage extends StatelessWidget {
                   const SizedBox(width: AppSizes.size_16),
                   Expanded(
                     child: ChronicleCard(
-                      title: 'Past Jobs',
+                      title: AppStrings.pastJobsCategory,
                       memories:
                           memories.where((memory) => memory.tags.any((tag) => pastJobTags.contains(tag))).toList(),
                     ),
@@ -74,7 +75,7 @@ class ChroniclePage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ChronicleCard(
-                      title: 'Adventures',
+                      title: AppStrings.adventuresCategory,
                       memories:
                           memories.where((memory) => memory.tags.any((tag) => adventuresTags.contains(tag))).toList(),
                     ),
@@ -82,7 +83,7 @@ class ChroniclePage extends StatelessWidget {
                   const SizedBox(width: AppSizes.size_16),
                   Expanded(
                     child: ChronicleCard(
-                      title: 'Food',
+                      title: AppStrings.foodCategory,
                       memories: memories.where((memory) => memory.tags.any((tag) => foodTags.contains(tag))).toList(),
                     ),
                   ),

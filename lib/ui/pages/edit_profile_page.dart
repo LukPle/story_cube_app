@@ -17,6 +17,7 @@ import '../../bloc/story_cube_cubit.dart';
 import '../../constants/colors.dart';
 import '../../constants/icon_sizes.dart';
 import '../../constants/sizes.dart';
+import '../../constants/strings.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({
@@ -100,7 +101,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               children: [
                 ListTile(
                   leading: Icon(PhosphorIcons.imagesSquare(), size: AppIconSizes.medium),
-                  title: const Text('Change Picture', style: AppTextStyles.body),
+                  title: const Text(AppStrings.changePictureOption, style: AppTextStyles.body),
                   onTap: () async {
                     Navigator.pop(context);
                     await _pickImage();
@@ -108,7 +109,7 @@ class EditProfilePageState extends State<EditProfilePage> {
                 ),
                 ListTile(
                   leading: Icon(PhosphorIcons.trash(), size: AppIconSizes.medium, color: AppColors.error),
-                  title: Text('Delete Picture', style: AppTextStyles.body.copyWith(color: AppColors.error)),
+                  title: Text(AppStrings.deletePictureOption, style: AppTextStyles.body.copyWith(color: AppColors.error)),
                   onTap: () {
                     _imageNotifier.value = null;
                     Navigator.pop(context);
@@ -160,7 +161,7 @@ class EditProfilePageState extends State<EditProfilePage> {
                     Navigator.pop(context, _selectedDateNotifier.value);
                   },
                   child: Text(
-                    'Save',
+                    AppStrings.saveButton,
                     style: AppTextStyles.body
                         .copyWith(color: ThemedColor.accentColor(context), fontWeight: FontWeight.w500),
                   ),
@@ -200,7 +201,7 @@ class EditProfilePageState extends State<EditProfilePage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      pageTitle: 'Edit Profile',
+      pageTitle: AppStrings.editProfilePageTitle,
       leading: GestureDetector(
         onTap: () => Navigator.of(context).pop(),
         child: Icon(
@@ -252,7 +253,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               ),
               const SizedBox(height: AppSizes.size_32),
               Text(
-                'Name',
+                AppStrings.nameFieldLabel,
                 style: AppTextStyles.bodySmall.copyWith(
                   color: ThemedColor.primaryColor(context),
                   fontWeight: FontWeight.w500,
@@ -261,7 +262,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               const SizedBox(height: AppSizes.size_4),
               CupertinoTextField(
                 controller: _nameController,
-                placeholder: 'Enter the name',
+                placeholder: AppStrings.nameFieldPlaceholder,
                 padding: const EdgeInsets.symmetric(horizontal: AppSizes.size_16, vertical: AppSizes.size_12),
                 style: AppTextStyles.body.copyWith(
                   color: ThemedColor.getColor(
@@ -278,7 +279,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               ),
               const SizedBox(height: AppSizes.size_16),
               Text(
-                'Relationship',
+                AppStrings.relationshipFieldLabel,
                 style: AppTextStyles.bodySmall.copyWith(
                   color: ThemedColor.primaryColor(context),
                   fontWeight: FontWeight.w500,
@@ -287,7 +288,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               const SizedBox(height: AppSizes.size_4),
               CupertinoTextField(
                 controller: _relationshipController,
-                placeholder: 'Enter the realationship',
+                placeholder: AppStrings.relationshipFieldPlaceholder,
                 padding: const EdgeInsets.symmetric(horizontal: AppSizes.size_16, vertical: AppSizes.size_12),
                 style: AppTextStyles.body.copyWith(
                   color: ThemedColor.getColor(
@@ -304,7 +305,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               ),
               const SizedBox(height: AppSizes.size_16),
               Text(
-                'Birthday',
+                AppStrings.birthdayFieldLabel,
                 style: AppTextStyles.bodySmall.copyWith(
                   color: ThemedColor.primaryColor(context),
                   fontWeight: FontWeight.w500,
@@ -338,7 +339,7 @@ class EditProfilePageState extends State<EditProfilePage> {
                           ),
                           const SizedBox(width: AppSizes.size_6),
                           Text(
-                            selectedDate == null ? 'Select Date' : DateFormat('dd.MM.yyyy').format(selectedDate),
+                            selectedDate == null ? AppStrings.selectDatePlaceholder : DateFormat('dd.MM.yyyy').format(selectedDate),
                             style: selectedDate == null
                                 ? AppTextStyles.body.copyWith(color: CupertinoColors.placeholderText)
                                 : AppTextStyles.body.copyWith(
@@ -359,7 +360,7 @@ class EditProfilePageState extends State<EditProfilePage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: AppSizes.size_16),
                 child: Text(
-                  'This data is used to personalize the Chronicles Page and only stored locally on device.',
+                  AppStrings.profileInfoText,
                   textAlign: TextAlign.center,
                   style: AppTextStyles.caption.copyWith(
                     color: ThemedColor.primaryColor(context).withOpacity(0.7),
@@ -377,7 +378,7 @@ class EditProfilePageState extends State<EditProfilePage> {
                       disabledColor: ThemedColor.primaryColor(context).withOpacity(0.3),
                       borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
                       onPressed: isEnabled ? () => _saveProfile() : null,
-                      child: const Text('Save Changes', style: AppTextStyles.body),
+                      child: const Text(AppStrings.saveChangesButton, style: AppTextStyles.body),
                     );
                   },
                 ),

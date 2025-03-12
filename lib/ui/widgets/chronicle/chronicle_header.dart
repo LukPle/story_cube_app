@@ -4,6 +4,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import '../../../constants/colors.dart';
 import '../../../constants/icon_sizes.dart';
 import '../../../constants/sizes.dart';
+import '../../../constants/strings.dart';
 import '../../../constants/text_styles.dart';
 
 class ChronicleHeader extends StatelessWidget {
@@ -30,7 +31,7 @@ class ChronicleHeader extends StatelessWidget {
               style: AppTextStyles.body.copyWith(fontWeight: FontWeight.w500),
             ),
             Text(
-              '$memoriesCount Memories',
+              '$memoriesCount ${AppStrings.memories}',
               style: AppTextStyles.bodySmall.copyWith(
                 color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
               ),

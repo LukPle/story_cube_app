@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:story_cube_app/constants/radius_sizes.dart';
 import 'package:story_cube_app/constants/sizes.dart';
+import 'package:story_cube_app/constants/strings.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/ui/widgets/memories/memory_tag.dart';
@@ -34,7 +35,7 @@ class MemoryCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Recorded on ${DateFormat('dd.MM.yyyy').format(memory.createdAt)}',
+                  '${AppStrings.recordedDateInfo} ${DateFormat('dd.MM.yyyy').format(memory.createdAt)}',
                   style: AppTextStyles.caption.copyWith(
                     color: ThemedColor.accentColor(context),
                     fontWeight: FontWeight.w500,
@@ -43,7 +44,7 @@ class MemoryCard extends StatelessWidget {
                 if (memory.createdAt.isAfter(DateTime.now().subtract(const Duration(days: 5)))) ...[
                   const SizedBox(width: AppSizes.size_8),
                   MemoryTag(
-                    text: 'New',
+                    text: AppStrings.newTag,
                     backgroundColor: ThemedColor.accentColor(context),
                     textColor: Theme.of(context).brightness == Brightness.light
                         ? AppColors.accentColorDark

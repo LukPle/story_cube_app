@@ -9,6 +9,7 @@ import 'package:story_cube_app/ui/widgets/person_card.dart';
 
 import '../../constants/icon_sizes.dart';
 import '../../constants/sizes.dart';
+import '../../constants/strings.dart';
 import '../widgets/memories/memory_card.dart';
 
 class ChronicleDetailsPage extends StatelessWidget {
@@ -47,7 +48,7 @@ class ChronicleDetailsPage extends StatelessWidget {
                               .map((person) => PersonCard(person: person))
                               .toList(),
                         )
-                      : const EmptyStatePlaceholder(message: 'Persons featured in memories will appear here')
+                      : const EmptyStatePlaceholder(message: AppStrings.personsEmptyState)
                   : chronicleDetailsData.data.cast<MemoryModel>().isNotEmpty
                       ? Column(
                           children: chronicleDetailsData.data
@@ -58,7 +59,7 @@ class ChronicleDetailsPage extends StatelessWidget {
                                   ))
                               .toList(),
                         )
-                      : const EmptyStatePlaceholder(message: 'Memories that fit this category will appear here'),
+                      : const EmptyStatePlaceholder(message: AppStrings.memoriesEmptyState),
               const SizedBox(height: AppSizes.size_96),
             ],
           ),

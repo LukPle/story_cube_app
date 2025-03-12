@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:story_cube_app/constants/strings.dart';
 import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/ui/widgets/app_scaffold.dart';
 import 'package:story_cube_app/ui/widgets/empty_state_placeholder.dart';
@@ -28,7 +29,7 @@ class TimelinePage extends StatelessWidget {
           }
 
           return AppScaffold(
-            pageTitle: 'Timeline',
+            pageTitle: AppStrings.timelinePageTitle,
             children: [
               const SizedBox(height: AppSizes.size_16),
               Column(
@@ -41,7 +42,7 @@ class TimelinePage extends StatelessWidget {
                           isLastEntry: index == groupedMemories.length - 1,
                         );
                       })
-                    : [const EmptyStatePlaceholder(message: 'Recorded memories will appear here')],
+                    : [const EmptyStatePlaceholder(message: AppStrings.timelineEmptyState)],
               ),
               const SizedBox(height: AppSizes.size_64),
             ],

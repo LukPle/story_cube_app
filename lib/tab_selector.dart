@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:story_cube_app/constants/colors.dart';
+import 'package:story_cube_app/constants/strings.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/ui/pages/pages.dart';
 
@@ -56,7 +57,7 @@ class TabSelector extends StatelessWidget {
                 selectedItemColor: ThemedColor.primaryColor(context),
                 items: [
                   BottomNavigationBarItem(
-                    label: 'Timeline',
+                    label: AppStrings.timelinePageTitle,
                     icon: Padding(
                       padding: const EdgeInsets.only(bottom: AppSizes.size_2),
                       child: Icon(PhosphorIcons.notebook(
@@ -64,7 +65,7 @@ class TabSelector extends StatelessWidget {
                     ),
                   ),
                   BottomNavigationBarItem(
-                    label: 'Chronicle',
+                    label: AppStrings.chroniclePageTitle,
                     icon: Padding(
                       padding: const EdgeInsets.only(bottom: AppSizes.size_2),
                       child: Icon(PhosphorIcons.userFocus(

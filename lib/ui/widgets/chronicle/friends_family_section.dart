@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:story_cube_app/ui/pages/chronicle_details_page.dart';
 
+import '../../../constants/strings.dart';
 import 'chronicle_header.dart';
 import '../person_card.dart';
 import '../../../constants/colors.dart';
@@ -24,7 +25,7 @@ class FriendsFamilySection extends StatelessWidget {
         routes.chronicleDetails,
         arguments: ChronicleDetailsData(
           category: ChronicleDetailsCategory.persons,
-          title: 'Friends and Family',
+          title: AppStrings.friendsFamilyCategory,
           data: persons,
         ),
       ),
@@ -56,7 +57,7 @@ class FriendsFamilySection extends StatelessWidget {
             const SizedBox(height: AppSizes.size_16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: AppSizes.size_16),
-              child: ChronicleHeader(title: 'Friends and Family', memoriesCount: persons.length),
+              child: ChronicleHeader(title: AppStrings.friendsFamilyCategory, memoriesCount: persons.length),
             ),
           ],
         ),

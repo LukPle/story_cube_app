@@ -8,6 +8,7 @@ import '../../../constants/colors.dart';
 import '../../../constants/icon_sizes.dart';
 import '../../../constants/radius_sizes.dart';
 import '../../../constants/sizes.dart';
+import '../../../constants/strings.dart';
 import '../../../constants/text_styles.dart';
 import '../../../constants/routes.dart' as routes;
 
@@ -35,14 +36,14 @@ class ProfileSectionPlaceholder extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Add a Profile',
+                    AppStrings.profileHeaderEmptyState,
                     style: AppTextStyles.bodyLarge.copyWith(
                         color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
                         fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: AppSizes.size_2),
                   Text(
-                    'Personalize the chronicle',
+                    AppStrings.profileDescriptionEmptyState,
                     style: AppTextStyles.bodySmall.copyWith(
                       color: ThemedColor.getColor(context, light: Colors.black54, dark: Colors.white70),
                     ),

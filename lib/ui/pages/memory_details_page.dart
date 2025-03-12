@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:story_cube_app/constants/icon_sizes.dart';
 import 'package:story_cube_app/constants/radius_sizes.dart';
+import 'package:story_cube_app/constants/strings.dart';
 import 'package:story_cube_app/constants/text_styles.dart';
 import 'package:story_cube_app/models/memory_model.dart';
 import 'package:story_cube_app/ui/widgets/app_scaffold.dart';
@@ -70,7 +71,7 @@ class MemoryDetailsPage extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.only(left: AppSizes.size_12),
                                 child: MemoryTag(
-                                  text: 'New',
+                                  text: AppStrings.newTag,
                                   size: MemoryTagSize.large,
                                   backgroundColor: ThemedColor.accentColor(context),
                                   textColor: Theme.of(context).brightness == Brightness.light
@@ -137,7 +138,7 @@ class MemoryDetailsPage extends StatelessWidget {
                     Text(memory.text, style: AppTextStyles.body),
                     const SizedBox(height: AppSizes.size_8),
                     Text(
-                      'Recorded on ${DateFormat('dd.MM.yyyy').format(memory.createdAt)}',
+                      '${AppStrings.recordedDateInfo} ${DateFormat('dd.MM.yyyy').format(memory.createdAt)}',
                       style: AppTextStyles.caption.copyWith(
                         color: ThemedColor.accentColor(context),
                         fontWeight: FontWeight.w500,
@@ -152,7 +153,7 @@ class MemoryDetailsPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text('Special Quotes', style: AppTextStyles.body),
+                              const Text(AppStrings.quotesHeader, style: AppTextStyles.body),
                               const SizedBox(height: AppSizes.size_8),
                               Container(
                                 padding: const EdgeInsets.all(AppSizes.size_12),
@@ -182,7 +183,7 @@ class MemoryDetailsPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text('Themes', style: AppTextStyles.body),
+                              const Text(AppStrings.themesHeader, style: AppTextStyles.body),
                               const SizedBox(height: AppSizes.size_8),
                               Wrap(
                                 spacing: AppSizes.size_4,
