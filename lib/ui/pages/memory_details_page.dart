@@ -106,16 +106,18 @@ class MemoryDetailsPage extends StatelessWidget {
                         const SizedBox(width: AppSizes.size_8),
                         Flexible(
                           child: Text(
-                            memory.locations.length > 1
-                                ? '${memory.locations.sublist(0, memory.locations.length - 1).join(', ')} and ${memory.locations.last}'
-                                : memory.locations.first,
+                            memory.locations.isEmpty
+                                ? AppStrings.missingLocation
+                                : memory.locations.length > 1
+                                    ? '${memory.locations.sublist(0, memory.locations.length - 1).join(', ')} and ${memory.locations.last}'
+                                    : memory.locations.first,
                             style: AppTextStyles.bodySmall,
                             softWrap: true,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: AppSizes.size_24),
+                    SizedBox(height: memory.persons.isNotEmpty ? AppSizes.size_24 : AppSizes.size_8),
                     Wrap(
                       spacing: AppSizes.size_4,
                       runSpacing: AppSizes.size_4,
@@ -148,53 +150,56 @@ class MemoryDetailsPage extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(AppStrings.quotesHeader, style: AppTextStyles.body),
-                              const SizedBox(height: AppSizes.size_8),
-                              Container(
-                                padding: const EdgeInsets.all(AppSizes.size_12),
-                                decoration: BoxDecoration(
-                                  color: ThemedColor.cardColor(context),
-                                  borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
-                                  border: Border.all(width: 0.5, color: Colors.grey),
+                        if (memory.quotes.isNotEmpty) ...[
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(AppStrings.quotesHeader, style: AppTextStyles.body),
+                                const SizedBox(height: AppSizes.size_8),
+                                Container(
+                                  padding: const EdgeInsets.all(AppSizes.size_12),
+                                  decoration: BoxDecoration(
+                                    color: ThemedColor.cardColor(context),
+                                    borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
+                                    border: Border.all(width: 0.5, color: Colors.grey),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: memory.quotes
+                                        .map(
+                                          (quote) => Padding(
+                                            padding: const EdgeInsets.only(bottom: AppSizes.size_6),
+                                            child: Text('"$quote"', style: AppTextStyles.bodySmall),
+                                          ),
+                                        )
+                                        .toList(),
+                                  ),
                                 ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: memory.quotes
-                                      .map(
-                                        (quote) => Padding(
-                                          padding: const EdgeInsets.only(bottom: AppSizes.size_6),
-                                          child: Text('"$quote"', style: AppTextStyles.bodySmall),
-                                        ),
-                                      )
-                                      .toList(),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: AppSizes.size_16),
+                        ],
+                        if (memory.tags.isNotEmpty)
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(AppStrings.themesHeader, style: AppTextStyles.body),
+                                const SizedBox(height: AppSizes.size_8),
+                                Wrap(
+                                  spacing: AppSizes.size_4,
+                                  runSpacing: AppSizes.size_4,
+                                  children: memory.tags.map((tag) {
+                                    return MemoryChip(text: tag);
+                                  }).toList(),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        const SizedBox(width: AppSizes.size_16),
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(AppStrings.themesHeader, style: AppTextStyles.body),
-                              const SizedBox(height: AppSizes.size_8),
-                              Wrap(
-                                spacing: AppSizes.size_4,
-                                runSpacing: AppSizes.size_4,
-                                children: memory.tags.map((tag) {
-                                  return MemoryChip(text: tag);
-                                }).toList(),
-                              ),
-                            ],
-                          ),
-                        ),
                       ],
                     ),
                     const SizedBox(height: AppSizes.size_96),

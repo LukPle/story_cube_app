@@ -8,6 +8,7 @@ class AppStrings {
   static const String newTag = 'New';
 
   /// Memories Details Page
+  static const String missingLocation = 'No location was mentioned';
   static const String quotesHeader = 'Special Quotes';
   static const String themesHeader = 'Themes';
 
