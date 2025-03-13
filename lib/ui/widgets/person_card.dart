@@ -10,15 +10,19 @@ class PersonCard extends StatelessWidget {
   const PersonCard({
     super.key,
     required this.person,
+    this.backgroundColor,
   });
 
   final PersonModel person;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
+    final Color backgroundColor = this.backgroundColor ?? ThemedColor.cardColor(context);
+
     return Container(
       decoration: BoxDecoration(
-          color: ThemedColor.cardColor(context),
+          color: backgroundColor,
           borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
           border: Border.all(width: 0.5, color: Colors.grey)),
       padding: const EdgeInsets.symmetric(

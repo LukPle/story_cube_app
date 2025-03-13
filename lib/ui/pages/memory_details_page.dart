@@ -158,24 +158,22 @@ class MemoryDetailsPage extends StatelessWidget {
                               children: [
                                 const Text(AppStrings.quotesHeader, style: AppTextStyles.body),
                                 const SizedBox(height: AppSizes.size_8),
-                                Container(
-                                  padding: const EdgeInsets.all(AppSizes.size_12),
-                                  decoration: BoxDecoration(
-                                    color: ThemedColor.cardColor(context),
-                                    borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
-                                    border: Border.all(width: 0.5, color: Colors.grey),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: memory.quotes
-                                        .map(
-                                          (quote) => Padding(
-                                            padding: const EdgeInsets.only(bottom: AppSizes.size_6),
-                                            child: Text('"$quote"', style: AppTextStyles.bodySmall),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: memory.quotes
+                                      .map(
+                                        (quote) => Padding(
+                                          padding: const EdgeInsets.only(bottom: AppSizes.size_6),
+                                          child: Text(
+                                            '"$quote"',
+                                            style: AppTextStyles.bodySmall.copyWith(
+                                              color: ThemedColor.primaryColor(context),
+                                              fontWeight: FontWeight.w500
+                                            ),
                                           ),
-                                        )
-                                        .toList(),
-                                  ),
+                                        ),
+                                      )
+                                      .toList(),
                                 ),
                               ],
                             ),
