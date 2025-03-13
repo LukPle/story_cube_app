@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:story_cube_app/ui/pages/pages.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/icon_sizes.dart';
@@ -11,11 +12,13 @@ class ChronicleHeader extends StatelessWidget {
   const ChronicleHeader({
     super.key,
     required this.title,
-    required this.memoriesCount,
+    required this.itemCount,
+    required this.category,
   });
 
   final String title;
-  final int memoriesCount;
+  final int itemCount;
+  final ChronicleDetailsCategory category;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,9 @@ class ChronicleHeader extends StatelessWidget {
               style: AppTextStyles.body.copyWith(fontWeight: FontWeight.w500),
             ),
             Text(
-              '$memoriesCount ${AppStrings.memories}',
+              category == ChronicleDetailsCategory.persons
+                  ? '$itemCount ${AppStrings.persons}'
+                  : '$itemCount ${AppStrings.memories}',
               style: AppTextStyles.bodySmall.copyWith(
                 color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
               ),

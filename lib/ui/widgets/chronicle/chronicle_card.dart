@@ -36,7 +36,11 @@ class ChronicleCard extends StatelessWidget {
           color: ThemedColor.cardColor(context),
           borderRadius: BorderRadius.circular(AppRadiusSizes.medium),
         ),
-        child: ChronicleHeader(title: title, memoriesCount: memories.length),
+        child: ChronicleHeader(
+          title: title,
+          itemCount: memories.length,
+          category: ChronicleDetailsCategory.memories,
+        ),
       ),
     );
   }

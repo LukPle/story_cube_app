@@ -21,6 +21,7 @@ class AppStrings {
   static const String pastJobsCategory = 'Past Jobs';
   static const String adventuresCategory = 'Adventures';
   static const String foodCategory = 'Food';
+  static const String persons = 'Persons';
   static const String memories = 'Memories';
 
   /// Chronicle Details Page

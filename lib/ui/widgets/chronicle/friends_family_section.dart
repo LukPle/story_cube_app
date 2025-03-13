@@ -57,7 +57,11 @@ class FriendsFamilySection extends StatelessWidget {
             const SizedBox(height: AppSizes.size_16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: AppSizes.size_16),
-              child: ChronicleHeader(title: AppStrings.friendsFamilyCategory, memoriesCount: persons.length),
+              child: ChronicleHeader(
+                title: AppStrings.friendsFamilyCategory,
+                itemCount: persons.length,
+                category: ChronicleDetailsCategory.persons,
+              ),
             ),
           ],
         ),
