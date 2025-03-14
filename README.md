@@ -16,6 +16,12 @@
 <br>
 Application for Android, iOS and Web developed with Flutter
 <br><br>
+Connected Repositories:
+<br>
+https://github.com/Pleanog/story_cube_hardware
+<br>
+Backend coming soon!
+<br><br>
 
 **Timeline**
 <br><br>
