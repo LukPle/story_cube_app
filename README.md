@@ -1,31 +1,44 @@
 # Story Cube App
 <br>
 <img src="https://github.com/user-attachments/assets/27b488c4-4f45-44c1-98a5-edba7539588f" alt="story_cube_app_logo" width="450">
-<br>
-<br>
+<br><br>
 
 ## Table of Contents
 - [About](#about)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the App](#running-the-app)
-<br>
+<br><br>
 
 ## About
 
 **Story Cube App - The companion app for the Tonsor Box**
 <br>
-A mobile app for Android and iOS developed with Flutter
-<br>
-<br>
+Application for Android, iOS and Web developed with Flutter
+<br><br>
 
-**Timeline**<br>
-coming soon
+**Timeline**
+<br><br>
+Recorded memories appear in a timeline view with a details screen that shows a summary and handy metadata about the story, including the original audio to listen to. This preserves memories and eases the management of important information because stories should not get lost.
+<br><br>
+<img src="https://github.com/user-attachments/assets/1102ca2a-7f71-4bc7-8909-538a55c3c975" alt="timeline_screens" width="340">
+<br><br>
 
-**Chronicle**<br>
-coming soon
+**Chronicle**
+<br><br>
+An overview of a person's memories, categorized by metadata to provide a clearer, more structured overview of their life. There's also an option to create a personal profile for this person to help personalize the experience.
+<br><br>
+<img src="https://github.com/user-attachments/assets/4cd3aeab-fc82-4d7e-8dec-4c2bfb4eb251" alt="chronicle_screens" width="480">
+<br><br>
 
+**Team and Work**
+<br><br>
+<img src="https://github.com/user-attachments/assets/decd15eb-2bf2-4bbb-985c-be1e64b0ab36" alt="team1" width="260">
+<img src="https://github.com/user-attachments/assets/2a0dd360-51f6-4efd-aa7d-498d3435da78" alt="team2" width="260">
 <br>
+<img src="https://github.com/user-attachments/assets/1ad69c66-1a83-4c34-a4d7-2e562327bfa4" alt="team3" width="320">
+<img src="https://github.com/user-attachments/assets/bf8b9933-52ed-44dd-adea-8164a10cb16c" alt="team4" width="320">
+<br><br>
 
 ## Prerequisites
 
@@ -37,7 +50,7 @@ Before you can start with Flutter, ensure you have the following installed:
 3. **Android Studio** or **Visual Studio Code**: These are the recommended IDEs for Flutter development.
 4. **Android SDK**: Necessary for building and running Android apps.
 5. **Xcode**: Required for building and running iOS apps (macOS only).
-<br>
+<br><br>
 
 ## Installation
 
@@ -63,7 +76,7 @@ Follow these steps to set up your development environment:
     - **Firebase CLI**: Get the Firebase CLI from [Google Firebase](https://firebase.google.com/docs/cli).
     - **Set Up Firebase App-Integration**: Follow the instructions on [Firebase for Flutter Instructions](https://firebase.google.com/docs/flutter/setup?platform=ios).
     - **Authorization**: The setup requires you to be authorized in the Firebase project. You can also connet any another project.
-<br>
+<br><br>
 
 ## Running the App
 
@@ -77,4 +90,4 @@ To run the app on an emulator or physical device:
     ```sh
     flutter run
     ```
-<br>
+<br><br>
