@@ -17,8 +17,8 @@ class StoryCubeCubit extends Cubit<StoryCubeState> {
 
     try {
       final chronicleProfile = await _localStorage.loadChronicleProfile();
-      //final memories = await fetchMemories();
-      final List<MemoryModel> memories = memoryData;
+      final memories = await fetchMemories();
+      //final List<MemoryModel> memories = memoryData;
       emit(StoryCubeLoadSuccess(chronicleProfile: chronicleProfile, memories: memories));
     } catch (e) {
       print(e);

@@ -15,13 +15,7 @@ Future<List<MemoryModel>> fetchMemories() async {
       String fileName = jsonRef.name.replaceAll('.json', '');
 
       final jsonString = await jsonRef.getData().then((bytes) => utf8.decode(bytes!));
-      String cleanedJson = jsonString.trim();
-
-      if (cleanedJson.startsWith('```json')) {
-        cleanedJson = cleanedJson.replaceAll('```json', '').replaceAll('```', '').trim();
-      }
-
-      final Map<String, dynamic> jsonData = jsonDecode(cleanedJson);
+      final Map<String, dynamic> jsonData = jsonDecode(jsonString);
 
       final audioRef = storage.ref('audios/$fileName.mp3');
       final audioUrl = await audioRef.getDownloadURL();
