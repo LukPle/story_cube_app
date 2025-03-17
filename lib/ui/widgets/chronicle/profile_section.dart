@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:story_cube_app/constants/strings.dart';
 import 'package:story_cube_app/models/chronicle_profile_model.dart';
 import 'package:story_cube_app/ui/widgets/chronicle/profile_picture.dart';
 
@@ -55,7 +56,7 @@ class ProfileSection extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSizes.size_2),
                   Text(
-                    '${chronicleProfile.relationship} • ${_calculateAge(chronicleProfile.birthday!).toString()} years old',
+                    '${chronicleProfile.relationship} • ${_calculateAge(chronicleProfile.birthday!).toString()} ${AppStrings.ageInfo}',
                     style: AppTextStyles.bodySmall.copyWith(
                       color: ThemedColor.getColor(context, light: Colors.black54, dark: Colors.white70),
                     ),

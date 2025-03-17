@@ -58,13 +58,17 @@ class MemoryCard extends StatelessWidget {
               memory.title,
               style: AppTextStyles.body.copyWith(fontWeight: FontWeight.w500),
               maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: AppSizes.size_4),
-            Text(memory.subtitle,
-                style: AppTextStyles.bodySmall.copyWith(
-                  color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
-                ),
-                maxLines: 1),
+            Text(
+              memory.subtitle,
+              style: AppTextStyles.bodySmall.copyWith(
+                color: Theme.of(context).brightness == Brightness.light ? Colors.black54 : Colors.white70,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
           ],
         ),
       ),

@@ -4,6 +4,7 @@ import 'package:story_cube_app/models/memory_model.dart';
 
 final List<MemoryModel> memoryData = [
   MemoryModel(
+    id: '1',
     dateTime: DateTime(1957, 6, 15),
     createdAt: DateTime.now().subtract(const Duration(days: 343)),
     title: "The Day I Met Your Grandfather",
@@ -26,6 +27,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '2',
     dateTime: DateTime(1985, 6, 20),
     createdAt: DateTime.now().subtract(const Duration(days: 9)),
     title: "Our Family Road Trip",
@@ -48,6 +50,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '3',
     dateTime: DateTime(1978, 12, 24),
     createdAt: DateTime.now().subtract(const Duration(days: 20)),
     title: "The Christmas We Will Never Forget",
@@ -70,6 +73,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '4',
     dateTime: DateTime(1985, 6, 15),
     createdAt: DateTime.now().subtract(const Duration(days: 30)),
     title: "The Summer Picnic Disaster",
@@ -91,6 +95,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '5',
     dateTime: DateTime(1975, 5, 8),
     createdAt: DateTime.now().subtract(const Duration(days: 190)),
     title: "The Day I Bought My First Car",
@@ -110,9 +115,8 @@ final List<MemoryModel> memoryData = [
     ],
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
-
-  // New Memories with Updated Years
   MemoryModel(
+    id: '6',
     dateTime: DateTime(1997, 9, 12),
     createdAt: DateTime.now().subtract(const Duration(days: 50)),
     title: "Grandmother's Secret Apple Strudel Recipe",
@@ -135,6 +139,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '7',
     dateTime: DateTime(1997, 9, 3),
     createdAt: DateTime.now().subtract(const Duration(days: 75)),
     title: "First Day at Gymnasium",
@@ -157,6 +162,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '8',
     dateTime: DateTime(2003, 7, 27),
     createdAt: DateTime.now().subtract(const Duration(days: 110)),
     title: "Uncle Karl's Retirement Party",
@@ -180,6 +186,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '9',
     dateTime: DateTime(1999, 11, 5),
     createdAt: DateTime.now().subtract(const Duration(days: 140)),
     title: "Lena's First Piano Recital",
@@ -202,6 +209,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '10',
     dateTime: DateTime(2003, 7, 15),
     createdAt: DateTime.now().subtract(const Duration(days: 165)),
     title: "Summer in Tuscany",
@@ -225,6 +233,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '11',
     dateTime: DateTime(1985, 6, 8),
     createdAt: DateTime.now().subtract(const Duration(days: 210)),
     title: "Grandfather Franz's Workshop Lessons",
@@ -246,6 +255,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '12',
     dateTime: DateTime(2001, 2, 16),
     createdAt: DateTime.now().subtract(const Duration(days: 258)),
     title: "Luisa's Promotion Celebration",
@@ -269,6 +279,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '13',
     dateTime: DateTime(1987, 10, 3),
     createdAt: DateTime.now().subtract(const Duration(days: 300)),
     title: "Helga's Famous Black Forest Cake Disaster",
@@ -292,6 +303,7 @@ final List<MemoryModel> memoryData = [
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),
   MemoryModel(
+    id: '14',
     dateTime: DateTime(2009, 8, 12),
     createdAt: DateTime.now().subtract(const Duration(hours: 2)),
     title: "Hiking the Zugspitze",
@@ -311,6 +323,332 @@ final List<MemoryModel> memoryData = [
     quotes: ["I can't go any further", "We did it", "We're standing on top of Germany"],
     events: [
       EventModel(date: DateTime(1995, 8, 12), description: "Mountain hiking adventure"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+];
+
+List<MemoryModel> germanMemoryData = [
+  MemoryModel(
+    id: '1',
+    dateTime: DateTime(1957, 6, 15),
+    createdAt: DateTime.now().subtract(const Duration(days: 343)),
+    title: "Der Tag, an dem ich deinen Großvater traf",
+    subtitle: "Eine Liebesgeschichte",
+    summary:
+    "Deine Großmutter erzählt diese Geschichte über den Tag, an dem sie deinen Großvater auf einem lokalen Jahrmarkt traf. Sie sagt, er war der gutaussehendste Mann in der Menge!",
+    text:
+    "Es war ein warmer Sommernachmittag, als deine Großmutter deinen Großvater zum ersten Mal sah. Sie war mit ihren Freundinnen auf dem örtlichen Jahrmarkt und genoss die Fahrgeschäfte und den Duft von frischem Popcorn in der Luft. Als sie um die Ecke beim Karussell bog, bemerkte sie einen jungen Mann, der mit seinen Freunden lachte. Ihre Blicke trafen sich, und für einen kurzen Moment schien die Zeit stillzustehen. Später würde sie dir erzählen, dass sie in diesem Moment einfach wusste – er war der Richtige. Sie verbrachten den ganzen Abend damit, zu reden, Geschichten zu teilen und gemeinsam den Jahrmarkt zu genießen. Und das war der Beginn einer Liebesgeschichte, die ein Leben lang dauern würde.",
+    locations: ['Örtlicher Jahrmarkt', 'Stadtplatz'],
+    tags: ['love', 'first meeting', 'family'],
+    persons: [
+      PersonModel(firstName: "Gisela", lastName: "Schmidt", relationship: "Großmutter"),
+      PersonModel(firstName: "Franz", lastName: "Schmidt", relationship: "Großvater"),
+    ],
+    tone: 'Friendly',
+    quotes: ["Ich liebe diesen Mann", "Er war so gutaussehend"],
+    events: [
+      EventModel(date: DateTime(1957, 6, 15), description: "Örtlicher Jahrmarkt"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '2',
+    dateTime: DateTime(1985, 6, 20),
+    createdAt: DateTime.now().subtract(const Duration(days: 9)),
+    title: "Unsere Familienreise mit dem Auto",
+    subtitle: "Ein unvergessliches Abenteuer",
+    summary: "Die Reise, die wir in den Süden unternommen haben, war voller Lachen, platter Reifen und einer Million Erinnerungen.",
+    text:
+    "Es war eine Autoreise wie keine andere. Wir packten das Auto früh am Morgen, alle aufgeregt für das bevorstehende Abenteuer. Die ersten Stunden waren erfüllt von Musik und Gelächter, aber als wir tiefer in unsere Reise eintauchten, wurden die Dinge interessanter. Ein platter Reifen mitten im Nirgendwo, ein plötzlicher Regensturm, der uns zwang, in einem winzigen Straßenrestaurant Schutz zu suchen, und ein spontaner Umweg, der uns zu dem atemberaubendsten Sonnenuntergang führte, den wir je gesehen hatten. Trotz der unerwarteten Wendungen waren es diese Momente, die die Reise unvergesslich machten.",
+    locations: ['Südliche Route', 'Grand Canyon', 'Wüstencampingplatz'],
+    tags: ['travel', 'adventure', 'exploration'],
+    persons: [
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+      PersonModel(firstName: "Thomas", lastName: "Weber", relationship: "Vater"),
+      PersonModel(firstName: "Max", lastName: "Weber", relationship: "Sohn"),
+    ],
+    tone: 'Exciting',
+    quotes: ["Das wird fantastisch!", "Darüber werden wir später lachen."],
+    events: [
+      EventModel(date: DateTime(1984, 7, 20), description: "Platter Reifen auf der Straße"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '3',
+    dateTime: DateTime(1978, 12, 24),
+    createdAt: DateTime.now().subtract(const Duration(days: 20)),
+    title: "Das Weihnachtsfest, das wir nie vergessen werden",
+    subtitle: "Ein Weihnachtswunder",
+    summary: "In diesem Jahr hatten wir Schnee mitten in einem warmen Winter! Dein Onkel Karl musste den Gehweg freischaufeln.",
+    text:
+    "Es war ein Weihnachtswunder. Die Wettervorhersage hatte einen weiteren trockenen, milden Winter vorhergesagt, aber als wir an diesem Morgen aufwachten, war die gesamte Nachbarschaft mit einer dicken Schneeschicht bedeckt. Onkel Karl, eingehüllt in drei Lagen Kleidung, griff zur Schaufel und begann, einen Weg freizuräumen, während wir alle vom Fenster aus zusahen und heißen Kakao tranken. An diesem Abend bauten wir einen Schneemann, hatten eine Schneeballschlacht und verbrachten eine der magischsten Weihnachtsnächte überhaupt. Es war ein Feiertag, über den wir noch jahrelang reden würden.",
+    locations: ['Zuhause', 'Wohnzimmer'],
+    tags: [],
+    persons: [
+      PersonModel(firstName: "Helga", lastName: "Müller", relationship: "Tante"),
+      PersonModel(firstName: "Karl", lastName: "Müller", relationship: "Onkel"),
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+    ],
+    tone: 'Nostalgic',
+    quotes: ["So etwas habe ich noch nie gesehen!", "Karl, hol die Schaufel!"],
+    events: [
+      EventModel(date: DateTime(1978, 12, 24), description: "Unerwarteter Schneefall"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '4',
+    dateTime: DateTime(1985, 6, 15),
+    createdAt: DateTime.now().subtract(const Duration(days: 30)),
+    title: "Die Sommer-Picknick-Katastrophe",
+    subtitle: "Eine Lektion in Vorbereitung",
+    summary: "Wir haben beschlossen, ein Picknick zu machen, aber niemand hat daran gedacht, den Sonnenschutz einzupacken!",
+    text:
+    "Es begann als ein perfekter Tag für ein Picknick. Die Sonne schien, das Essen war eingepackt und alle waren gut gelaunt. Aber als der Nachmittag voranschritt, bemerkten wir etwas – wir hatten die Sonnencreme vergessen. Als wir mit dem Essen fertig waren, waren bereits die Hälfte von uns sonnenverbrannt. Dann, um die Sache noch schlimmer zu machen, blies eine Windböe unsere Picknickdecke um und ließ die Sandwiches davonfliegen. Trotz der kleinen Katastrophen lachten wir den ganzen Heimweg. Es war ein Tag voller Missgeschicke, aber auch einer unserer denkwürdigsten Sommerausflüge.",
+    locations: ['Flussufer', 'Park'],
+    tags: ['food'],
+    persons: [
+      PersonModel(firstName: "Thomas", lastName: "Weber", relationship: "Vater"),
+      PersonModel(firstName: "Lena", lastName: "Weber", relationship: "Tochter"),
+    ],
+    tone: 'Humorous',
+    quotes: ["Hat jemand Sonnencreme mitgebracht?", "Hoppla..."],
+    events: [
+      EventModel(date: DateTime(1982, 8, 15), description: "Sonnenbrand beim Picknick"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '5',
+    dateTime: DateTime(1975, 5, 8),
+    createdAt: DateTime.now().subtract(const Duration(days: 190)),
+    title: "Der Tag, an dem ich mein erstes Auto kaufte",
+    subtitle: "Die Freiheit der offenen Straße",
+    summary: "Ich habe monatelang gespart, um mein erstes Auto zu kaufen. Es war nicht viel, aber es war meins!",
+    text:
+    "Es war nicht viel, aber es war meins. Nach monatelangem Sparen jedes Pfennigs hatte ich endlich genug, um mein erstes Auto zu kaufen. Es war eine alte, leicht rostige Limousine, aber für mich bedeutete sie Freiheit. Ich erinnere mich, wie ich damit nach Hause fuhr, die Fenster heruntergelassen, Musik auf voller Lautstärke, und mich fühlte, als gehöre mir die Welt. Dieses Auto brachte mich auf Roadtrips, nächtliche Fahrten und zahllose Abenteuer. Es war mehr als nur ein Auto – es war der Beginn der Unabhängigkeit.",
+    locations: ['Autohaus', 'Stadt'],
+    tags: [],
+    persons: [
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+    ],
+    tone: 'Excited',
+    quotes: ["Es ist meins!", "Ich bin endlich frei, überall hinzugehen."],
+    events: [
+      EventModel(date: DateTime(1975, 5, 8), description: "Erstes Auto gekauft"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '6',
+    dateTime: DateTime(1997, 9, 12),
+    createdAt: DateTime.now().subtract(const Duration(days: 50)),
+    title: "Großmutters geheimes Apfelstrudelrezept",
+    subtitle: "Eine Familientradition wird weitergegeben",
+    summary: "Gisela teilte endlich ihr berühmtes Apfelstrudelrezept, das sie jahrzehntelang geheim gehalten hatte.",
+    text:
+    "Solange ich mich erinnern kann, war Großmutter Giselas Apfelstrudel der Höhepunkt jedes Familientreffens. Der perfekt knusprige Teig, die zarten gewürzten Äpfel und dieser Hauch von etwas Besonderem, das niemand jemals ganz identifizieren konnte. Jahrzehntelang hütete sie ihr Rezept und behauptete, es sei ein 'Schmidt-Familiengeheimnis'. Aber an diesem Tag, als wir in ihrer Küche saßen und den Regen gegen die Fenster prasseln sahen, beschloss sie, dass es Zeit war, es weiterzugeben. Ich werde nie vergessen, wie sorgfältig sie jede Zutat abmaß, wie präzise sie die Technik demonstrierte, den Teig zu ziehen, bis er papierdünn war. 'Das Geheimnis', flüsterte sie, 'liegt darin, wie du den Teig faltest, und ein Spritzer Rosenwasser, den niemand erwartet.' Als sich die Küche mit dem warmen, tröstlichen Duft des Backens füllte, erzählte sie Geschichten darüber, wie sie das Rezept während der schwierigen Nachkriegsjahre von ihrer eigenen Großmutter gelernt hatte, als einfache Freuden alles bedeuteten.",
+    locations: ['Giselas Küche', 'Familienhaus'],
+    tags: ['recipe', 'food'],
+    persons: [
+      PersonModel(firstName: "Gisela", lastName: "Schmidt", relationship: "Großmutter"),
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+      PersonModel(firstName: "Lena", lastName: "Weber", relationship: "Tochter"),
+    ],
+    tone: 'Warm',
+    quotes: ["Das Geheimnis liegt darin, wie du den Teig faltest", "Manche Traditionen sind es wert, bewahrt zu werden"],
+    events: [
+      EventModel(date: DateTime(1993, 9, 12), description: "Rezeptaustausch"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '7',
+    dateTime: DateTime(1997, 9, 3),
+    createdAt: DateTime.now().subtract(const Duration(days: 75)),
+    title: "Erster Tag am Gymnasium",
+    subtitle: "Beginn eines neuen Kapitels",
+    summary: "Max' erster Tag am Gymnasium war eine Mischung aus Nervosität und Aufregung. Thomas bestand darauf, viel zu viele Fotos zu machen.",
+    text:
+    "Der Morgen war chaotisch – Max konnte seine neuen Schuhe nicht finden, Thomas hantierte mit der Kamera herum, und Luisa beschriftete hektisch die Schulutensilien. Obwohl wir extra früh aufgestanden waren, schafften wir es irgendwie trotzdem, spät dran zu sein. Max stand in seiner frischen neuen Uniform an der Haustür, der Rucksack wirkte fast zu groß für seine Schultern. 'Ich bin nicht nervös', beharrte er, obwohl das leichte Zittern in seiner Stimme ihn verriet. Die Fahrt zum Gymnasium war erfüllt von Thomas' ermutigenden Ratschlägen und Luisas Erinnerungen an Max' Mittagessen. Als wir ankamen, summte der Schulhof vor Aktivität – zurückkehrende Schüler begrüßten sich lautstark, andere neue Schüler sahen genauso besorgt aus wie Max sich fühlte. Bevor er durch diese imposanten Türen ging, drehte sich Max für eine letzte Umarmung um. 'Du wirst großartige Dinge tun', flüsterte Thomas. Als wir beobachteten, wie er im Gebäude verschwand, drückte Luisa meine Hand fest. Erst als wir wieder im Auto waren, ließ sie endlich die Tränen kommen. 'Unser kleiner Junge wird so schnell groß', sagte sie. An diesem Abend kam Max voller Geschichten über seine neuen Lehrer, potenzielle Freunde und die Weite des Gymnasiums im Vergleich zu seiner alten Schule nach Hause.",
+    locations: ['Zuhause', 'Gymnasium', 'Auto'],
+    tags: ['school', 'childhood', 'growing up'],
+    persons: [
+      PersonModel(firstName: "Max", lastName: "Weber", relationship: "Sohn"),
+      PersonModel(firstName: "Thomas", lastName: "Weber", relationship: "Vater"),
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+    ],
+    tone: 'Emotional',
+    quotes: ["Ich bin nicht nervös", "Du wirst großartige Dinge tun", "Unser kleiner Junge wird so schnell groß"],
+    events: [
+      EventModel(date: DateTime(1997, 9, 3), description: "Erster Tag am Gymnasium"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '8',
+    dateTime: DateTime(2003, 7, 27),
+    createdAt: DateTime.now().subtract(const Duration(days: 110)),
+    title: "Onkel Karls Ruhestandsfeier",
+    subtitle: "40 Jahre bei Siemens feiern",
+    summary: "Nach vier Jahrzehnten bei derselben Firma ging Karl endlich in den Ruhestand. Die Party war voller Überraschungen und Emotionen.",
+    text:
+    "Die Gemeindehalle war mit blauen und weißen Luftballons geschmückt – Siemens-Farben – und Fotos aus Karls 40-jähriger Karriere schmückten die Wände. Alle waren da: alte Kollegen, Familienmitglieder, Freunde aus seinem Kegelverein. Wir hatten diese Überraschung monatelang geplant, und als Karl hereinkam, war der Schock in seinem Gesicht unbezahlbar. Er stand wie erstarrt an der Tür, während alle jubelten, bis Helga ihn sanft nach vorne schob. Den ganzen Abend über erzählten Kollegen abwechselnd Geschichten über die Zusammenarbeit mit Karl – Geschichten über seine unerschütterliche Hingabe, seine legendären Problemlösungsfähigkeiten und die unzähligen Male, die er jüngere Ingenieure betreut hatte. Sein alter Chef überreichte ihm eine goldene Uhr, eine Tradition, über die Karl immer gescherzt hatte. 'Ich hätte nie gedacht, dass ich einer dieser alten Hasen sein würde, die die Uhr bekommen', sagte er mit emotionsgeladener Stimme. Nach dem Abendessen enthüllte Thomas die Diashow, die wir erstellt hatten, mit Fotos von Karls erstem Arbeitstag 1963 bis zu seiner letzten Woche. Als sie die Videobotschaften von Kollegen abspielten, die nicht teilnehmen konnten – darunter drei, die in andere Länder in den Ruhestand gegangen waren – brach Karl schließlich in Tränen aus. 'Ich hatte nicht erkannt, dass ich solch einen Einfluss hatte', sagte er. Als die Nacht zu Ende ging, erhob Karl sein Glas: 'Auf die Firma, die meine zweite Familie wurde, und auf die echte Familie, die mich durch alles unterstützt hat.'",
+    locations: ['Gemeindehalle', 'Siemens'],
+    tags: ['work', 'career'],
+    persons: [
+      PersonModel(firstName: "Karl", lastName: "Müller", relationship: "Onkel"),
+      PersonModel(firstName: "Helga", lastName: "Müller", relationship: "Tante"),
+      PersonModel(firstName: "Thomas", lastName: "Weber", relationship: "Vater"),
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+    ],
+    tone: 'Celebratory',
+    quotes: ["Ich hätte nie gedacht, dass ich einer dieser alten Hasen sein würde, die die Uhr bekommen", "Ich hatte nicht erkannt, dass ich solch einen Einfluss hatte", "Auf die Firma, die meine zweite Familie wurde"],
+    events: [
+      EventModel(date: DateTime(2003, 4, 27), description: "Ruhestandsfeier"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '9',
+    dateTime: DateTime(1999, 11, 5),
+    createdAt: DateTime.now().subtract(const Duration(days: 140)),
+    title: "Lenas erstes Klavierkonzert",
+    subtitle: "Ein Stern wird geboren",
+    summary: "Nach monatelangem Üben führte Lena Beethovens 'Für Elise' bei ihrem ersten Klavierkonzert auf.",
+    text:
+    "Der Konzertsaal der Musikschule war gefüllt mit stolzen Eltern und nervösen Kindern, die Notenblätter umklammerten. Lena hatte monatelang geübt und stundenlang am Klavier verbracht, bis Beethovens 'Für Elise' perfekt war. Hinter der Bühne zitterten ihre Hände leicht, als sie durch den Vorhang auf das Publikum spähte. 'Was ist, wenn ich etwas falsch mache?', flüsterte sie. Thomas kniete sich neben sie und richtete die Schleife in ihrem Haar. 'Dann spielst du einfach weiter, genau wie wir geübt haben. Niemand wird es überhaupt bemerken.' Als ihr Name aufgerufen wurde, betrat sie die Bühne mit einer solchen Haltung, dass es schwer zu glauben war, dass sie erst acht Jahre alt war. Sie setzte sich an den Flügel, korrigierte ihre Haltung genau so, wie ihre Lehrerin es ihr beigebracht hatte, und holte tief Luft. Die ersten Noten waren zögerlich, aber dann geschah etwas Magisches – sie vergaß das Publikum und verlor sich in der Musik. Ihre kleinen Finger tanzten mit überraschender Sicherheit über die Tasten und erweckten Beethovens geliebte Komposition zum Leben. In der dritten Reihe drückte Luisa meine Hand so fest, dass es fast schmerzte, Tränen des Stolzes liefen über ihr Gesicht. Als Lena fertig war, herrschte einen Moment Stille, bevor das Publikum in Applaus ausbrach. Sie stand auf und machte einen perfekten Knicks, genau wie sie es zu Hause dutzende Male geübt hatte. Später kam ihre Klavierlehrerin Frau Becker mit einem Funkeln in den Augen auf uns zu. 'Dieses Kind hat eine Gabe', sagte sie. 'Mit der richtigen Förderung könnte sie es sehr weit bringen.'",
+    locations: ['Musikschule', 'Konzertsaal'],
+    tags: ['childhood', 'growing up'],
+    persons: [
+      PersonModel(firstName: "Lena", lastName: "Weber", relationship: "Tochter"),
+      PersonModel(firstName: "Thomas", lastName: "Weber", relationship: "Vater"),
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+    ],
+    tone: 'Proud',
+    quotes: ["Was ist, wenn ich etwas falsch mache?", "Dann spielst du einfach weiter, genau wie wir geübt haben", "Dieses Kind hat eine Gabe"],
+    events: [
+      EventModel(date: DateTime(1999, 11, 5), description: "Klavierkonzert"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '10',
+    dateTime: DateTime(2003, 7, 15),
+    createdAt: DateTime.now().subtract(const Duration(days: 165)),
+    title: "Sommer in der Toskana",
+    subtitle: "Zwei Wochen italienische Glückseligkeit",
+    summary: "Unser Familienurlaub in Italien war voller erstaunlicher Speisen, historischer Wunder und der Schaffung von Erinnerungen, die ein Leben lang halten werden.",
+    text:
+    "Die Villa, die wir gemietet hatten, thronte auf einem toskanischen Hügel, umgeben von Olivenhainen und Weinbergen, die sich bis zum Horizont erstreckten. Jeden Morgen wachten wir zu goldenem Sonnenlicht auf, das durch die Fensterläden strömte, und dem fernen Klang von Kirchenglocken. An unserem dritten Tag besuchten wir Florenz, wo Max und Lena wie hypnotisiert vor Michelangelos David standen. 'Er ist nackt', flüsterte Lena laut, was die umstehenden Touristen zum Schmunzeln brachte. Die Uffizien waren als nächstes an der Reihe, obwohl wir nur die Hälfte schafften, bevor die Geduld der Kinder für Renaissancekunst erschöpft war. Wir kompensierten mit übermäßigen Mengen an Gelato – Thomas führte eine laufende Liste der probierten Geschmacksrichtungen, wobei sich Pistazie als Familienfavorit herausstellte. Der Kochkurs, den wir in einem kleinen Dorf außerhalb von Siena nahmen, war vielleicht der Höhepunkt. Die großmütterliche Lehrerin, Nonna Maria, hatte eine besondere Vorliebe für Luisa und bestand darauf, dass ihre Hände 'für Pasta gemacht' seien. Vier Stunden lang kneteten, rollten und formten wir frische Pasta und bereiteten ein Festmahl aus Ravioli, Pappardelle und Tortellini zu. 'Das ist ganz anders als die Pasta, die wir zu Hause bekommen', erklärte Max, sein Gesicht mit Tomatensauce bedeckt. Abends saßen wir auf der Terrasse der Villa, beobachteten Glühwürmchen, die zwischen den Olivenbäumen tanzten, und tranken lokalen Wein (und Saft für die Kinder). Thomas versuchte, allen Sternbilder beizubringen, obwohl wir vermuten, dass er die meisten Namen erfunden hat. In unserer letzten Nacht brachte Luisa einen Toast aus: 'Auf Italien, für die perfekte Auszeit, und auf uns, für die Schaffung von Erinnerungen, die uns durch die kältesten deutschen Winter wärmen werden.'",
+    locations: ['Toskana', 'Florenz', 'Siena', 'Italienische Villa'],
+    tags: ['vacation', 'travel', 'exploration'],
+    persons: [
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+      PersonModel(firstName: "Thomas", lastName: "Weber", relationship: "Vater"),
+      PersonModel(firstName: "Max", lastName: "Weber", relationship: "Sohn"),
+      PersonModel(firstName: "Lena", lastName: "Weber", relationship: "Tochter"),
+    ],
+    tone: 'Joyful',
+    quotes: ["Er ist nackt", "Das ist ganz anders als die Pasta, die wir zu Hause bekommen", "Auf Italien, für die perfekte Auszeit"],
+    events: [
+      EventModel(date: DateTime(1990, 7, 15), description: "Italienurlaub"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '11',
+    dateTime: DateTime(1985, 6, 8),
+    createdAt: DateTime.now().subtract(const Duration(days: 210)),
+    title: "Großvater Franz' Werkstattunterricht",
+    subtitle: "Handwerkskunst von einem Meister lernen",
+    summary: "Jeden Samstag eines Sommers verbrachte Max Zeit in Franz' Werkstatt und lernte, Dinge zu bauen und zu reparieren.",
+    text:
+    "Die Werkstatt hinter Großvater Franz' Haus war ein magischer Ort – erfüllt vom Geruch nach Sägemehl und Maschinenöl, die Wände gesäumt mit Werkzeugen, deren Namen Max langsam lernte. In diesem Sommer beschloss Franz, dass es an der Zeit war, sein Wissen an seinen Enkel weiterzugeben. Jeden Samstagmorgen kam Max eifrig und aufmerksam und beobachtete, wie Franz' verwitterte Hände Techniken demonstrierten, die über Jahrzehnte perfektioniert wurden. Sie begannen mit einfachen Projekten – einem Vogelhaus, einer kleinen Holzbox mit Schwalbenschwanzverbindungen – bevor sie zu komplexeren Unternehmungen übergingen. Franz war ein geduldiger Lehrer, erhob nie seine Stimme, selbst wenn Max Fehler machte. 'Fehler sind unser Lernweg', pflegte er zu sagen und zeigte Max, wie man den Fehler korrigiert oder einbaut. Mitte des Sommers hatten sie begonnen, ein antikes Holzradiogehäuse zu restaurieren, das Franz auf einem Flohmarkt gefunden hatte. Max lernte, Holz zu dämpfen und zu biegen, Beizfarben anzupassen und Lack in glatten, gleichmäßigen Schichten aufzutragen. 'So hat mein Vater es mir beigebracht', sagte Franz oft, 'und so hat sein Vater es ihm beigebracht.' Am letzten Samstag, als das restaurierte Gehäuse glänzend und fertig dastand, überreichte Franz Max seinen eigenen Satz Handwerkzeuge. 'Das sind keine Spielzeuge', sagte er ernst. 'Sie sind die Verlängerung deiner Hände und deines Verstandes.' An diesem Abend, als sie die Arbeit des Sommers bewunderten, legte Franz seinen Arm um Max' Schultern. 'Du hast gute Hände', sagte er leise. 'Ruhig und geduldig. Denk daran, alles Kaputte kann mit genügend Sorgfalt und den richtigen Werkzeugen repariert werden.' Jahre später würde Max sagen, dass diese Sommer-Samstage nicht nur seine Wertschätzung für Handwerkskunst geprägt haben, sondern auch seinen Ansatz zur Lösung von Problemen im Leben.",
+    locations: ['Werkstatt', 'Franz\' Haus'],
+    tags: ['childhood', 'growing up'],
+    persons: [
+      PersonModel(firstName: "Franz", lastName: "Schmidt", relationship: "Großvater"),
+      PersonModel(firstName: "Max", lastName: "Weber", relationship: "Sohn"),
+    ],
+    tone: 'Instructive',
+    quotes: ["Fehler sind unser Lernweg", "Das sind keine Spielzeuge", "Du hast gute Hände", "Alles Kaputte kann mit genügend Sorgfalt und den richtigen Werkzeugen repariert werden"],
+    events: [
+      EventModel(date: DateTime(1985, 6, 8), description: "Werkstattunterricht"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '12',
+    dateTime: DateTime(2001, 2, 16),
+    createdAt: DateTime.now().subtract(const Duration(days: 258)),
+    title: "Luisas Beförderungsfeier",
+    subtitle: "Harte Arbeit zahlt sich aus",
+    summary: "Nach Jahren der Hingabe wurde Luisa zur Leitenden Forschungswissenschaftlerin im Pharmaunternehmen befördert.",
+    text:
+    "Der Brief kam an einem Dienstag – formell und offiziell auf dem Briefkopf des Unternehmens, aber die Worte ließen Luisas Hände vor Aufregung zittern. Nach fünf Jahren engagierter Forschung, unzähligen späten Nächten im Labor und einer bahnbrechenden Arbeit über Antikörperentwicklung war sie zur Leitenden Forschungswissenschaftlerin befördert worden. Thomas bestand auf einer angemessenen Feier. Er organisierte heimlich ein Abendessen im 'Zur Traube', dem gehobenen Restaurant, das wir normalerweise für besondere Jubiläen reservierten. Er koordinierte sogar mit ihren Kollegen – als wir ankamen, warteten Dr. Becker, der Laborleiter, und mehrere Teammitglieder mit Champagner. 'Auf den brillantesten Kopf unserer Abteilung', prostete Dr. Becker, 'dessen Hingabe wahrscheinlich unzählige Leben retten wird.' Was Luisa am meisten berührte, waren die handgezeichneten Karten von Max und Lena. Max hatte versucht, ein Mikroskop zu zeichnen ('Es sieht eher wie ein Roboter aus', gab er zu), während Lena in ihrer sorgfältigen Schrift geschrieben hatte: 'Meine Mama ist die klügste Wissenschaftlerin der Welt.' Später in dieser Nacht, nachdem die Kinder eingeschlafen waren, gestand Luisa, dass es Momente gab, in denen sie ihre Entscheidung, eine so anspruchsvolle Karriere zu verfolgen und gleichzeitig eine Familie zu gründen, in Frage stellte. 'Ich habe Schulaufführungen und Elterntreffen verpasst', sagte sie. 'Ich bin zu müde nach Hause gekommen, um bei den Hausaufgaben zu helfen.' Thomas erinnerte sie daran, wie ihre Augen aufleuchteten, wenn sie über ihre Forschung sprach, wie die Kinder vor ihren Freunden mit ihrer Mutter prahlten, die 'Krankheiten bekämpft', wie sie ihnen Hingabe und Leidenschaft vorlebte. 'Du förderst nicht nur die Wissenschaft', sagte er, 'du zeigst unseren Kindern, was es bedeutet, etwas Sinnvolles zu verfolgen.' Die Beförderung brachte nicht nur eine Gehaltserhöhung mit sich, sondern auch die Möglichkeit, ihr eigenes Forschungsteam zu leiten – eine perfekte Balance zwischen Anerkennung für vergangene Arbeit und Chancen für zukünftige Wirkung.",
+    locations: ['Zuhause', 'Zur Traube Restaurant', 'Pharmaunternehmen'],
+    tags: ['work', 'career'],
+    persons: [
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+      PersonModel(firstName: "Thomas", lastName: "Weber", relationship: "Vater"),
+      PersonModel(firstName: "Max", lastName: "Weber", relationship: "Sohn"),
+      PersonModel(firstName: "Lena", lastName: "Weber", relationship: "Tochter"),
+    ],
+    tone: 'Accomplished',
+    quotes: ["Auf den brillantesten Kopf unserer Abteilung", "Meine Mama ist die klügste Wissenschaftlerin der Welt", "Du förderst nicht nur die Wissenschaft"],
+    events: [
+      EventModel(date: DateTime(2001, 2, 16), description: "Beförderung"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '13',
+    dateTime: DateTime(1987, 10, 3),
+    createdAt: DateTime.now().subtract(const Duration(days: 300)),
+    title: "Helgas berühmte Schwarzwälder Kirschtorten-Katastrophe",
+    subtitle: "Eine Geburtstagsüberraschung, die schiefging",
+    summary: "Tante Helgas Versuch, ihre Spezialtorte für Karls Geburtstag zu backen, führte zu einer Küchenkatastrophe und einer unvergesslichen Erinnerung.",
+    text:
+    "Tante Helgas Schwarzwälder Kirschtorte war legendär in unserer Familie – Schichten aus Schokoladenbiskuit, Kirschen, Sahne und Kirschwasser, die sie nur zu besonderen Anlässen machte. Für Onkel Karls 60. Geburtstag war sie entschlossen, sich mit der bisher aufwendigsten Version selbst zu übertreffen. Die Probleme begannen, als sie beschloss, das Rezept zu verdoppeln, ohne die Backzeit anzupassen. Wir kamen in ihrem Haus an und fanden die Küche wie eine Szene aus einer Komödie vor – Kakaopulver bedeckte jede Oberfläche, Kirschsaft war über den Boden gespritzt, und Helga selbst saß inmitten des Chaos und lachte, bis ihr die Tränen übers Gesicht liefen. Die Torte, so schien es, war spektakulär zusammengebrochen, als sie versuchte, die Schichten zusammenzusetzen. 'Die Sahne war zu warm', erklärte sie zwischen Lachattacken, 'und dann begann alles einfach zu rutschen!' Karl fand die Situation, statt enttäuscht zu sein, urkomisch. 'In vierzig Jahren Ehe', erklärte er, 'habe ich noch nie eine so großartige Katastrophe gesehen!' Da wir die Zutaten nicht verschwenden wollten, nahmen wir alle Löffel und aßen das köstliche Durcheinander direkt von der Servierplatte. Es war, da waren sich alle einig, die genussvollste Version von Helgas Torte, die wir je gegessen hatten. Thomas, der immer praktisch ist, rief die örtliche Bäckerei an und organisierte einen Last-Minute-Ersatz-Kuchen, aber ehrlich gesagt konnte er nicht mit der Erinnerung mithalten, wie wir alle um die Kücheninsel gedrängt standen, Kuchen mit den Händen aßen und lachten, bis unsere Seiten schmerzten. Jetzt, Jahre später, wann immer jemand Schwarzwälder Kirschtorte erwähnt, tauschen wir alle wissende Blicke aus und versuchen, unser Lächeln zu unterdrücken.",
+    locations: ['Karl und Helgas Haus', 'Küche'],
+    tags: ['food'],
+    persons: [
+      PersonModel(firstName: "Helga", lastName: "Müller", relationship: "Tante"),
+      PersonModel(firstName: "Karl", lastName: "Müller", relationship: "Onkel"),
+      PersonModel(firstName: "Thomas", lastName: "Weber", relationship: "Vater"),
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+    ],
+    tone: 'Humorous',
+    quotes: ["Die Sahne war zu warm, und dann begann alles einfach zu rutschen!", "In vierzig Jahren Ehe habe ich noch nie eine so großartige Katastrophe gesehen!"],
+    events: [
+      EventModel(date: DateTime(1987, 10, 3), description: "Geburtstagstorten-Katastrophe"),
+    ],
+    audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+  ),
+  MemoryModel(
+    id: '14',
+    dateTime: DateTime(2009, 8, 12),
+    createdAt: DateTime.now().subtract(const Duration(hours: 2)),
+    title: "Wanderung aud die Zugspitze",
+    subtitle: "Eroberung des höchsten Gipfels Deutschlands",
+    summary: "Unsere zweitägige Familienwanderung zum Gipfel der Zugspitze hat unsere Grenzen getestet, aber uns mit unvergesslichen Ausblicken belohnt.",
+    text:
+    "Es war Thomas' Idee – eine Familienherausforderung zu Max' Geburtstag. 'Wir werden gemeinsam Deutschlands höchsten Berg besteigen,' verkündete er eines Abends beim Essen und breitete Wanderkarten auf dem Tisch aus. Es folgten Monate der Vorbereitung – Trainingswanderungen an Wochenenden, Routenrecherche, Einlaufen neuer Wanderschuhe. Wir wählten die Reintal-Route, länger aber technisch weniger anspruchsvoll für die Kinder. Die Reise begann an der Partnachklamm, wo wir das rauschende Wasser bestaunten, das sich durch hohe Felswände schnitt. Bis zum Mittag war der Weg erheblich steiler geworden, und Lena begann zu schwächeln. 'Ich kann nicht mehr weitergehen,' erklärte sie dramatisch und ließ sich auf einen Felsen fallen. Da enthüllte Thomas sein geheimes Motivationswerkzeug – eine kleine Tüte ihrer Lieblingsschokolade mit Marzipanstückchen, die er an strategischen Rastplätzen verteilte. Wir verbrachten die Nacht in der Reintalangerhütte und teilten die Berghütte mit anderen Wanderern aus ganz Europa. Nach dem Abendessen holte ein österreichischer Bergsteiger ein Akkordeon hervor und stimmte traditionelle Berglieder an, in die Max begeistert einstimmte, obwohl er die Worte nicht kannte. Der zweite Tag begann vor Sonnenaufgang mit leichtem Nieselregen, der zum Glück bis zum Vormittag aufklarte. Der letzte Aufstieg war am anspruchsvollsten – ein steiler Anstieg über loses Geröll, das bei jedem Schritt nach vorne zurückzurutschen schien. Luisa hielt Lenas Hand fest, während Max darauf bestand, mit Thomas voranzugehen. Als wir endlich das Gipfelkreuz erreichten, schien sich die Welt um uns herum zu öffnen – Österreich, Deutschland, die Schweiz und Italien breiteten sich in einem Panorama von atemberaubender Schönheit aus. 'Wir haben es geschafft,' sagte Thomas mit bewegter Stimme, während er uns alle zu einer Gruppenumarmung versammelte. 'Wir stehen auf der Spitze Deutschlands.' Das Gipfelfoto – windzerzaustes Haar, gerötete Gesichter und triumphierende Lächeln – hängt jetzt prominent in unserem Wohnzimmer, ein Zeugnis dessen, was wir gemeinsam erreichen können.",
+    locations: ['Zugspitze', 'Partnachklamm', 'Reintalangerhütte', 'Bayerische Alpen'],
+    tags: ['adventure', 'exploration'],
+    persons: [
+      PersonModel(firstName: "Thomas", lastName: "Weber", relationship: "Vater"),
+      PersonModel(firstName: "Luisa", lastName: "Weber", relationship: "Mutter"),
+      PersonModel(firstName: "Max", lastName: "Weber", relationship: "Sohn"),
+      PersonModel(firstName: "Lena", lastName: "Weber", relationship: "Tochter"),
+    ],
+    tone: 'Triumphant',
+    quotes: ["Ich kann nicht mehr weitergehen", "Wir haben es geschafft", "Wir stehen auf der Spitze Deutschlands"],
+    events: [
+      EventModel(date: DateTime(1995, 8, 12), description: "Bergwanderabenteuer"),
     ],
     audioUrl: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
   ),

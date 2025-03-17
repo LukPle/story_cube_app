@@ -52,6 +52,8 @@ class AppScaffold extends StatelessWidget {
                 style: AppTextStyles.bodyLarge.copyWith(
                   color: ThemedColor.getColor(context, light: Colors.black, dark: Colors.white),
                 ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
               leading: leading,
               trailing: trailing,

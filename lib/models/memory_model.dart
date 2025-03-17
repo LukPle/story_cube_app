@@ -2,6 +2,7 @@ import 'person_model.dart';
 import 'event_model.dart';
 
 class MemoryModel {
+  final String id;
   final DateTime dateTime;
   final String title;
   final String subtitle;
@@ -17,6 +18,7 @@ class MemoryModel {
   final DateTime createdAt;
 
   MemoryModel({
+    required this.id,
     required this.dateTime,
     required this.title,
     required this.subtitle,
@@ -34,6 +36,7 @@ class MemoryModel {
 
   factory MemoryModel.fromMap(Map<String, dynamic> data, {required String audioUrl}) {
     return MemoryModel(
+      id: data['id'] as String,
       dateTime: DateTime.parse(data['date']),
       title: data['title'] as String,
       subtitle: data['subtitle'] as String,

@@ -9,7 +9,7 @@ class EventModel {
 
   factory EventModel.fromMap(Map<String, dynamic> data) {
     return EventModel(
-      date: DateTime.parse(data['first_name']),
+      date: DateTime.parse(data['date']),
       description: data['description'] as String,
     );
   }

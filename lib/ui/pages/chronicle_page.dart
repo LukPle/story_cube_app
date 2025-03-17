@@ -25,10 +25,10 @@ class ChroniclePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> growingUpTags = ['childhood', 'school', 'growing up'];
-    final List<String> pastJobTags = ['work', 'university', 'career'];
-    final List<String> adventuresTags = ['vacation', 'travel', 'adventure', 'exploration'];
-    final List<String> foodTags = ['recipe', 'food'];
+    final List<String> growingUpTags = ['Childhood', 'School', 'Growing Up'];
+    final List<String> pastJobTags = ['Work', 'University', 'Career'];
+    final List<String> adventuresTags = ['Vacation', 'Travel', 'Adventure', 'Exploration'];
+    final List<String> foodTags = ['Recipe', 'Food'];
 
     return BlocBuilder<StoryCubeCubit, StoryCubeState>(
       bloc: BlocProvider.of<StoryCubeCubit>(context),
@@ -36,8 +36,6 @@ class ChroniclePage extends StatelessWidget {
         if (state is StoryCubeLoadSuccess) {
           final chronicleProfile = state.chronicleProfile;
           final List<MemoryModel> memories = state.memories;
-
-          print(memories);
 
           return AppScaffold(
             pageTitle: AppStrings.chroniclePageTitle,
