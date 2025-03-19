@@ -1,5 +1,5 @@
-class AppStringsEnglish {
-  AppStringsEnglish._();
+class AppStrings {
+  AppStrings._();
 
   /// Timeline Page
   static const String timelinePageTitle = 'Timeline';
@@ -44,8 +44,8 @@ class AppStringsEnglish {
   static const String saveChangesButton = 'Save Changes';
 }
 
-class AppStrings {
-  AppStrings._();
+class AppStringsGerman {
+  AppStringsGerman._();
 
   /// Timeline-Seite
   static const String timelinePageTitle = 'Zeitachse';

@@ -328,7 +328,7 @@ final List<MemoryModel> memoryData = [
   ),
 ];
 
-List<MemoryModel> germanMemoryData = [
+List<MemoryModel> memoryDataGerman = [
   MemoryModel(
     id: '1',
     dateTime: DateTime(1957, 6, 15),

@@ -55,7 +55,7 @@ class AudioPlayerSectionState extends State<AudioPlayerSection> {
   String _formatDuration(Duration duration) {
     final minutes = duration.inMinutes.remainder(60);
     final seconds = duration.inSeconds.remainder(60);
-    return '${minutes.toString().padRight(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+    return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
   }
 
   void _handlePlayPause() {

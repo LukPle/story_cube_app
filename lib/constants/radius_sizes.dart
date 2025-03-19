@@ -8,5 +8,5 @@ class AppRadiusSizes {
   static const double medium = 12;
 
   /// 24px
-  static const double large = 24.0;
+  static const double large = 24;
 }
